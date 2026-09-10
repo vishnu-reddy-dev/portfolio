@@ -6,7 +6,7 @@ export const projectsData = [
     description: "A scalable multi-tenant CRM platform engineered with role-based access control and tenant-specific configurations to support multiple client organizations on a single platform.",
     technologies: ["Java", "Spring Boot", "REST APIs", "MySQL", "HTML", "CSS", "JavaScript"],
     categories: ["FULL STACK", "JAVA"],
-    image: "/images/smart-office.jpg",
+    image: "/images/saas-crm.png",
     features: [
       "Multi-tenant architecture with role-based access control (RBAC)",
       "Tenant-specific configurations for isolated client environments"
@@ -24,7 +24,7 @@ export const projectsData = [
     description: "Digitized library operations system managing book cataloging, member registrations, issue-return workflows, and automated fine calculation.",
     technologies: ["Java", "Spring Boot", "REST APIs", "MySQL", "HTML", "CSS", "JavaScript"],
     categories: ["FULL STACK", "JAVA"],
-    image: "/images/library-system.jpg",
+    image: "/images/library-system.png",
     features: [
       "Book cataloging & catalog search",
       "Member registration",
@@ -44,7 +44,7 @@ export const projectsData = [
     description: "Full-stack administrative management application enabling employee attendance tracking, leave request workflows, task assignment, and department-wise reporting.",
     technologies: ["Java", "Spring Boot", "Servlets", "JDBC", "MySQL", "HTML5", "CSS3"],
     categories: ["FULL STACK", "JAVA"],
-    image: "/images/smart-office.jpg",
+    image: "/images/smart-office.png",
     features: [
       "Employee attendance tracking",
       "Leave management",
@@ -64,7 +64,7 @@ export const projectsData = [
     description: "Interactive real-time typing application with live WPM calculation, accuracy tracking, timed test modes, error highlighting, and leaderboard score history.",
     technologies: ["Java", "Spring Boot", "MySQL", "HTML", "CSS", "JavaScript"],
     categories: ["FULL STACK", "WEB"],
-    image: "/images/type-master.jpg",
+    image: "/images/typing-master.png",
     features: [
       "Real-time typing speed test & live WPM tracking",
       "Accuracy tracking & timed test modes",
@@ -84,7 +84,7 @@ export const projectsData = [
     description: "Web application featuring curated question banks by topic and company, mock practice tests with instant scoring, progress dashboard, bookmarking, and searchable resource library.",
     technologies: ["Next.js", "React.js", "JavaScript", "REST APIs"],
     categories: ["FULL STACK", "REACT", "WEB"],
-    image: "/images/hospital-system.jpg",
+    image: "/images/interview-prep.png",
     features: [
       "Curated question bank by topic/company",
       "Mock/practice tests with instant scoring",

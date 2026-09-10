@@ -73,7 +73,7 @@
 
 /* Minimal Details Section */
 .project-content {
-  padding: 1.5rem 1.75rem;
+  padding: clamp(1.15rem, 2.5vw, 1.75rem);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -97,7 +97,7 @@
 }
 
 .project-title {
-  font-size: 1.35rem;
+  font-size: clamp(1.15rem, 1.5vw + 0.4rem, 1.35rem);
   font-weight: 700;
   color: var(--text-primary);
   letter-spacing: -0.02em;

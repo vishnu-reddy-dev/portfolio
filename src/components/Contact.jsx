@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import { Mail, Phone, Send, MessageSquare, CheckCircle, AlertCircle } from 'lucide-react';
-import { GithubIcon, LinkedinIcon, NaukriIcon } from './BrandIcons';
+import { GithubIcon, LinkedinIcon } from './BrandIcons';
 import './Contact.css';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    subject: '',
     message: ''
   });
 
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState('idle'); // 'idle' | 'submitting' | 'success' | 'error'
-  const [errorMessage, setErrorMessage] = useState('');
 
   const validateForm = () => {
     const newErrors = {};
@@ -46,55 +46,40 @@ export default function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (status === 'submitting') return;
     if (!validateForm()) return;
 
     setStatus('submitting');
-    setErrorMessage('');
 
-    const apiKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
-    const customApiUrl = import.meta.env.VITE_CONTACT_API_URL;
-    const apiUrl = customApiUrl || (apiKey ? 'https://api.web3forms.com/submit' : null);
-
-    if (!apiUrl) {
-      // Direct Mailto fallback when no backend service key is configured
-      window.location.href = `mailto:vishnumatamala10@gmail.com?subject=Contact from ${encodeURIComponent(formData.name)}&body=${encodeURIComponent(formData.message)}`;
-      setStatus('success');
-      setFormData({ name: '', email: '', message: '' });
-      setTimeout(() => setStatus('idle'), 6000);
-      return;
-    }
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || 'fddb70b8-f73f-46d6-8da9-db2c070000ba';
 
     try {
-      const payload = apiKey ? {
-        access_key: apiKey,
-        name: formData.name,
-        email: formData.email,
-        message: formData.message,
-        subject: `New Portfolio Message from ${formData.name}`
-      } : {
-        name: formData.name,
-        email: formData.email,
-        message: formData.message
-      };
+      const web3FormData = new FormData();
+      web3FormData.append('access_key', accessKey);
+      web3FormData.append('name', formData.name.trim());
+      web3FormData.append('email', formData.email.trim());
+      web3FormData.append('subject', formData.subject.trim() || `New Portfolio Message from ${formData.name.trim()}`);
+      web3FormData.append('message', formData.message.trim());
+      web3FormData.append('from_name', formData.name.trim());
 
-      const res = await fetch(apiUrl, {
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
+        body: web3FormData
       });
 
-      const data = await res.json().catch(() => ({}));
+      const data = await response.json();
 
-      if (res.ok && (data.success !== false)) {
+      if (response.ok && data.success) {
         setStatus('success');
-        setFormData({ name: '', email: '', message: '' });
+        setFormData({ name: '', email: '', subject: '', message: '' });
         setTimeout(() => setStatus('idle'), 6000);
       } else {
-        throw new Error(data.message || 'Failed to send message via API.');
+        console.error('Web3Forms submit error:', data);
+        setStatus('error');
       }
     } catch (err) {
+      console.error('Submission error:', err);
       setStatus('error');
-      setErrorMessage(err.message || 'Unable to submit form. Please reach out directly via vishnumatamala10@gmail.com');
     }
   };
 
@@ -181,14 +166,27 @@ export default function Contact() {
               {status === 'success' && (
                 <div className="form-alert success">
                   <CheckCircle size={20} />
-                  <span>Thank you! Your message has been sent successfully. I will get back to you shortly.</span>
+                  <span>Message sent successfully! I'll get back to you soon.</span>
                 </div>
               )}
 
               {status === 'error' && (
-                <div className="form-alert error" style={{ background: 'rgba(239, 68, 68, 0.1)', border: '1px solid rgba(239, 68, 68, 0.3)', color: '#ef4444', padding: '1rem', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' }}>
+                <div
+                  className="form-alert error"
+                  style={{
+                    background: 'rgba(239, 68, 68, 0.1)',
+                    border: '1px solid rgba(239, 68, 68, 0.3)',
+                    color: '#ef4444',
+                    padding: '1rem',
+                    borderRadius: '8px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.75rem',
+                    marginBottom: '1rem'
+                  }}
+                >
                   <AlertCircle size={20} />
-                  <span>{errorMessage}</span>
+                  <span>Unable to send your message. Please try again.</span>
                 </div>
               )}
 
@@ -237,6 +235,22 @@ export default function Contact() {
               </div>
 
               <div className="form-group">
+                <label htmlFor="subject" className="form-label">
+                  Subject
+                </label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  placeholder="e.g. Job Opportunity / Project Discussion"
+                  className="form-input"
+                  disabled={status === 'submitting'}
+                />
+              </div>
+
+              <div className="form-group">
                 <label htmlFor="message" className="form-label">
                   Your Message <span className="required">*</span>
                 </label>
@@ -264,7 +278,7 @@ export default function Contact() {
                 className="btn btn-primary w-full"
               >
                 {status === 'submitting' ? (
-                  <span>Sending Message...</span>
+                  <span>Sending...</span>
                 ) : (
                   <>
                     <span>Send Message</span>

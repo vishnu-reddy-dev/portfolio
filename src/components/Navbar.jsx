@@ -45,6 +45,29 @@ export default function Navbar() {
     return () => sections.forEach((section) => observer.unobserve(section));
   }, []);
 
+  // Lock background scrolling when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen]);
+
+  // Close mobile menu on window resize to tablet/desktop
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 990 && mobileMenuOpen) {
+        setMobileMenuOpen(false);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [mobileMenuOpen]);
+
   // Close mobile menu on ESC key press
   useEffect(() => {
     const handleKeyDown = (e) => {

@@ -1,7 +1,7 @@
 .hero-section {
-  min-height: 100vh;
-  padding-top: calc(var(--header-height) + 3rem);
-  padding-bottom: 5rem;
+  min-height: calc(100dvh - var(--header-height));
+  padding-top: calc(var(--header-height) + clamp(1rem, 3.5vw, 3rem));
+  padding-bottom: clamp(2.5rem, 4.5vw, 5rem);
   display: flex;
   align-items: center;
   position: relative;
@@ -13,8 +13,8 @@
   top: 25%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 650px;
-  height: 420px;
+  width: min(90vw, 650px);
+  height: min(60vh, 420px);
   background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, rgba(16, 185, 129, 0.04) 40%, rgba(0, 0, 0, 0) 70%);
   pointer-events: none;
   z-index: 0;
@@ -24,16 +24,24 @@
 .hero-container {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
-  gap: 3rem;
+  gap: clamp(2rem, 4vw, 3.5rem);
   align-items: center;
   position: relative;
   z-index: 1;
 }
 
+@media (max-width: 1024px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+
 .hero-content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: 100%;
 }
 
 /* Status Badge */
@@ -46,9 +54,10 @@
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   font-family: var(--font-mono);
-  font-size: 0.825rem;
+  font-size: clamp(0.75rem, 1vw + 0.4rem, 0.825rem);
   color: var(--text-secondary);
-  margin-bottom: 2rem;
+  margin-bottom: clamp(1.25rem, 2.5vw, 2rem);
+  max-width: 100%;
 }
 
 .pulse-indicator {
@@ -58,10 +67,12 @@
   background-color: var(--accent-emerald);
   box-shadow: 0 0 10px var(--accent-emerald);
   animation: pulseGlow 2s infinite ease-in-out;
+  flex-shrink: 0;
 }
 
 .sparkle-icon {
   color: var(--accent-indigo);
+  flex-shrink: 0;
 }
 
 /* Title & Intro */
@@ -70,28 +81,30 @@
   flex-direction: column;
   gap: 0.5rem;
   margin-bottom: 1.5rem;
+  width: 100%;
 }
 
 .hero-name {
-  font-size: clamp(3rem, 7vw, 5.25rem);
+  font-size: clamp(2.15rem, 5.5vw + 0.5rem, 5.25rem);
   font-weight: 800;
   color: var(--text-primary);
   letter-spacing: -0.04em;
-  line-height: 0.95;
+  line-height: 0.98;
 }
 
 .hero-role {
-  font-size: clamp(1.4rem, 3.2vw, 2.25rem);
+  font-size: clamp(1.15rem, 2.5vw + 0.3rem, 2.25rem);
   font-weight: 500;
   color: var(--text-muted);
   letter-spacing: -0.02em;
+  line-height: 1.25;
 }
 
 .hero-intro {
-  font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+  font-size: clamp(0.95rem, 1.2vw + 0.5rem, 1.2rem);
   color: var(--text-secondary);
   max-width: 580px;
-  margin-bottom: 2.5rem;
+  margin-bottom: clamp(1.5rem, 3.5vw, 2.5rem);
   line-height: 1.65;
 }
 
@@ -100,12 +113,14 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 3rem;
+  gap: clamp(0.75rem, 1.5vw, 1.25rem);
+  margin-bottom: clamp(1.75rem, 3.5vw, 3rem);
+  width: 100%;
 }
 
 .hero-socials {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 1rem;
 }
@@ -129,6 +144,7 @@
   position: relative;
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .hero-visual-card {
@@ -179,14 +195,14 @@
 }
 
 .card-body {
-  padding: 1.5rem;
+  padding: clamp(1rem, 2.5vw, 1.5rem);
   overflow-x: auto;
 }
 
 .code-block {
   font-family: var(--font-mono);
-  font-size: 0.825rem;
-  line-height: 1.7;
+  font-size: clamp(0.725rem, 1vw + 0.3rem, 0.825rem);
+  line-height: 1.65;
   color: var(--text-secondary);
 }
 
@@ -202,51 +218,33 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.5rem 1rem;
+  padding: 0.45rem 0.9rem;
   background: var(--bg-surface);
   border: 1px solid var(--border-strong);
   border-radius: var(--radius-full);
   font-family: var(--font-mono);
-  font-size: 0.775rem;
+  font-size: 0.75rem;
   color: var(--text-primary);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
   animation: float 4s infinite ease-in-out;
+  pointer-events: none;
 }
 
 .badge-top {
-  top: -15px;
-  right: -15px;
+  top: -12px;
+  right: -10px;
 }
 
 .badge-bottom {
-  bottom: -15px;
-  left: -15px;
+  bottom: -12px;
+  left: -10px;
   animation-delay: -2s;
 }
 
-/* Responsive */
-@media (max-width: 1024px) {
-  .hero-container {
-    grid-template-columns: 1fr;
-    gap: 3.5rem;
-  }
-  .hero-visual {
-    width: 100%;
-  }
-  .hero-visual-card {
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 600px) {
-  .hero-actions {
-    flex-direction: column;
-    width: 100%;
-  }
-  .hero-actions .btn {
-    width: 100%;
-  }
-  .badge-top, .badge-bottom {
+@media (max-width: 520px) {
+  .floating-badge {
     display: none;
   }
 }
+
+

@@ -6,26 +6,35 @@
 .contact-grid {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
-  gap: 3.5rem;
+  gap: clamp(2rem, 4vw, 3.5rem);
   align-items: start;
 }
+
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 /* Left Cards */
 .contact-cards-column {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+  width: 100%;
 }
 
 .contact-info-card {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
-  padding: 1.5rem;
+  padding: clamp(1.15rem, 2.5vw, 1.5rem);
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: clamp(1rem, 2vw, 1.25rem);
   transition: all var(--transition-normal);
+  width: 100%;
 }
 
 .contact-info-card:hover {
@@ -35,8 +44,8 @@
 }
 
 .contact-icon-wrapper {
-  width: 50px;
-  height: 50px;
+  width: clamp(44px, 4.5vw, 50px);
+  height: clamp(44px, 4.5vw, 50px);
   border-radius: var(--radius-md);
   background: var(--bg-surface);
   border: 1px solid var(--border-strong);
@@ -59,9 +68,11 @@
 
 .contact-card-value {
   display: block;
-  font-size: 1.05rem;
+  font-size: clamp(0.95rem, 1vw + 0.4rem, 1.05rem);
   font-weight: 600;
   color: var(--text-primary);
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 /* Right Form */
@@ -69,10 +80,11 @@
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
-  padding: 2.5rem;
+  padding: clamp(1.25rem, 3vw, 2.5rem);
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  width: 100%;
 }
 
 .form-alert {
@@ -110,12 +122,12 @@
 
 .form-input {
   width: 100%;
-  padding: 0.875rem 1.25rem;
+  padding: clamp(0.75rem, 1.5vw, 0.875rem) clamp(1rem, 2vw, 1.25rem);
   background: var(--bg-surface);
   border: 1px solid var(--border-strong);
   border-radius: var(--radius-md);
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: clamp(0.9rem, 1vw + 0.3rem, 0.95rem);
   color: var(--text-primary);
   transition: all var(--transition-fast);
 }
@@ -138,14 +150,4 @@
   color: #f87171;
 }
 
-@media (max-width: 900px) {
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-}
 
-@media (max-width: 600px) {
-  .contact-form {
-    padding: 1.5rem;
-  }
-}

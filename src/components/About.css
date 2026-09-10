@@ -6,15 +6,16 @@
 .about-grid {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
-  gap: 4rem;
+  gap: clamp(2.5rem, 4vw, 4rem);
   align-items: center;
-  margin-bottom: 5rem;
+  margin-bottom: clamp(3rem, 5vw, 5rem);
 }
 
 /* Image Column */
 .about-image-column {
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .image-frame {
@@ -44,7 +45,7 @@
 
 /* Content Column */
 .about-subtitle {
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 2vw + 0.5rem, 1.5rem);
   font-weight: 600;
   color: var(--text-primary);
   line-height: 1.35;
@@ -53,7 +54,7 @@
 }
 
 .about-paragraph {
-  font-size: 1.05rem;
+  font-size: clamp(0.925rem, 1vw + 0.5rem, 1.05rem);
   color: var(--text-secondary);
   line-height: 1.7;
   margin-bottom: 1.25rem;
@@ -63,15 +64,16 @@
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
+  gap: clamp(0.75rem, 2vw, 1.25rem);
   margin: 2rem 0 2.5rem 0;
+  width: 100%;
 }
 
 .stat-card {
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
-  padding: 1.25rem 1rem;
+  padding: 1.25rem 0.85rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -87,7 +89,7 @@
 
 .stat-number {
   font-family: var(--font-mono);
-  font-size: 2.25rem;
+  font-size: clamp(1.65rem, 3vw, 2.25rem);
   font-weight: 700;
   color: var(--accent-white);
   line-height: 1;
@@ -95,7 +97,7 @@
 }
 
 .stat-label {
-  font-size: 0.8rem;
+  font-size: clamp(0.725rem, 1vw + 0.3rem, 0.8rem);
   color: var(--text-muted);
   font-weight: 500;
 }
@@ -108,15 +110,15 @@
 /* Feature Cards Grid */
 .feature-cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: clamp(1.25rem, 3vw, 2rem);
 }
 
 .feature-card {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
-  padding: 2rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
   transition: all var(--transition-normal);
 }
 
@@ -137,6 +139,7 @@
   justify-content: center;
   color: var(--text-primary);
   margin-bottom: 1.25rem;
+  flex-shrink: 0;
 }
 
 .feature-title {
@@ -155,15 +158,17 @@
 @media (max-width: 990px) {
   .about-grid {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 2.5rem;
   }
   .profile-img {
-    height: 400px;
+    height: clamp(320px, 45vh, 420px);
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 480px) {
   .stats-grid {
     grid-template-columns: 1fr;
   }
 }
+
+
