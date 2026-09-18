@@ -155,6 +155,7 @@
   line-height: 1.6;
 }
 
+/* ── Tablet: stack image above text ── */
 @media (max-width: 990px) {
   .about-grid {
     grid-template-columns: 1fr;
@@ -165,7 +166,23 @@
   }
 }
 
-@media (max-width: 480px) {
+/* ── Small tablet: stats 3 → 2 columns ── */
+@media (max-width: 640px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .about-actions {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .about-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ── Mobile: stats 2 → 1 column ── */
+@media (max-width: 400px) {
   .stats-grid {
     grid-template-columns: 1fr;
   }

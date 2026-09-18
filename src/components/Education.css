@@ -118,4 +118,28 @@
   gap: 0.5rem;
 }
 
+/* ── Small screens: stack degree group and meta vertically ── */
+@media (max-width: 600px) {
+  .edu-top {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .edu-meta {
+    gap: 0.4rem 0.75rem;
+  }
+  .edu-degree-group {
+    width: 100%;
+  }
+}
+
+/* ── Very small: tighten card padding ── */
+@media (max-width: 400px) {
+  .education-card {
+    padding: 1rem;
+  }
+  .edu-degree {
+    font-size: 1.1rem;
+  }
+}
+
 

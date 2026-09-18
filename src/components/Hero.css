@@ -241,9 +241,49 @@
   animation-delay: -2s;
 }
 
+/* ── Tablet: hide code card visual, centre content ── */
+@media (max-width: 1024px) {
+  .hero-visual {
+    justify-content: center;
+  }
+  .hero-visual-card {
+    max-width: 480px;
+  }
+}
+
+/* ── Small tablet / large phone ── */
+@media (max-width: 768px) {
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .hero-visual-card {
+    max-width: 100%;
+  }
+  .card-body {
+    padding: 0.85rem 1rem;
+  }
+  .code-block {
+    font-size: 0.725rem;
+  }
+}
+
+/* ── Mobile: hide floating badges, tighten hero ── */
 @media (max-width: 520px) {
   .floating-badge {
     display: none;
+  }
+  .hero-socials {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+  .hero-name {
+    font-size: clamp(2rem, 10vw, 3rem);
   }
 }
 

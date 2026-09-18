@@ -14,14 +14,14 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  left: clamp(10px, 1.8vw, 20px);
+  left: 16px;
   width: 2px;
   background: linear-gradient(to bottom, var(--border-strong), var(--border-subtle));
 }
 
 .timeline-item {
   position: relative;
-  padding-left: clamp(32px, 5vw, 60px);
+  padding-left: clamp(48px, 5vw, 60px);
   margin-bottom: clamp(2.25rem, 4vw, 3.5rem);
 }
 
@@ -31,7 +31,7 @@
 
 .timeline-marker {
   position: absolute;
-  left: clamp(1px, 1.2vw, 11px);
+  left: 6px;
   top: 6px;
   width: 20px;
   height: 20px;
@@ -169,6 +169,28 @@
   gap: 0.5rem;
   padding-top: 1rem;
   border-top: 1px solid var(--border-subtle);
+}
+
+/* ── Disable slide hover on touch devices ── */
+@media (hover: none) {
+  .timeline-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+/* ── Mobile: tighten left rail spacing ── */
+@media (max-width: 480px) {
+  .timeline-container {
+    padding: 1.5rem 0;
+  }
+  .card-top {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .meta-group {
+    gap: 0.4rem 0.75rem;
+  }
 }
 
 

@@ -150,4 +150,27 @@
   color: #f87171;
 }
 
+/* ── Explicit form column rule ── */
+.contact-form-column {
+  width: 100%;
+}
+
+/* ── Disable slide hover on touch devices ── */
+@media (hover: none) {
+  .contact-info-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+/* ── Mobile: tighten card gap ── */
+@media (max-width: 480px) {
+  .contact-cards-column {
+    gap: 0.85rem;
+  }
+  .contact-form {
+    gap: 1.15rem;
+  }
+}
+
 

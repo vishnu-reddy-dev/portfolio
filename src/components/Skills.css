@@ -74,9 +74,19 @@
 
 .skill-chip-name {
   font-family: var(--font-mono);
-  font-size: 0.825rem;
+  font-size: clamp(0.775rem, 1vw + 0.3rem, 0.825rem);
   font-weight: 500;
   color: var(--text-primary);
+}
+
+/* ── Mobile: tighten card padding ── */
+@media (max-width: 480px) {
+  .skill-category-card {
+    padding: 1rem;
+  }
+  .skill-chip {
+    padding: 0.35rem 0.6rem;
+  }
 }
 
 

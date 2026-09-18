@@ -61,13 +61,25 @@
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
   gap: clamp(1.5rem, 3vw, 2.25rem);
 }
 
-@media (max-width: 680px) {
+/* ── Force single column on mobile ── */
+@media (max-width: 640px) {
   .projects-grid {
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Filter bar: limit height and allow scroll on very small screens ── */
+@media (max-width: 480px) {
+  .project-filters {
+    gap: 0.4rem;
+  }
+  .filter-btn {
+    padding: 0.4rem 0.9rem;
+    font-size: 0.775rem;
   }
 }
 
