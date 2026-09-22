@@ -6,19 +6,6 @@ import './About.css';
 export default function About() {
   const duration = getExperienceDuration("2025-04-03");
 
-  const handleResumeDownload = (e) => {
-    // Check if resume file exists / handle graceful fallback if clicked before PDF is placed in public/
-    fetch('/resume.pdf', { method: 'HEAD' })
-      .then((res) => {
-        if (!res.ok) {
-          alert('Resume file is ready to be linked! Please place your resume.pdf file into the public/ directory.');
-        }
-      })
-      .catch(() => {
-        // Allow default download behavior
-      });
-  };
-
   return (
     <section id="about" className="section about-section">
       <div className="container">
@@ -83,10 +70,8 @@ export default function About() {
             <div className="about-actions">
               <a
                 href="/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+                download="M_Vishnu_Vardhan_Reddy_Resume.pdf"
                 className="btn btn-primary"
-                onClick={handleResumeDownload}
               >
                 <FileText size={18} />
                 <span>Download Resume</span>

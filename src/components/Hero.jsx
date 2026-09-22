@@ -4,16 +4,6 @@ import { GithubIcon, LinkedinIcon, NaukriIcon } from './BrandIcons';
 import './Hero.css';
 
 export default function Hero() {
-  const handleResumeDownload = () => {
-    fetch('/resume.pdf', { method: 'HEAD' })
-      .then((res) => {
-        if (!res.ok) {
-          alert('Resume file is ready to be linked! Please place your resume.pdf file into the public/ directory.');
-        }
-      })
-      .catch(() => { });
-  };
-
   return (
     <section id="home" className="hero-section bg-grid-pattern">
       {/* Background Ambient Glow */}
@@ -53,10 +43,8 @@ export default function Hero() {
 
             <a
               href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
+              download="M_Vishnu_Vardhan_Reddy_Resume.pdf"
               className="btn btn-secondary"
-              onClick={handleResumeDownload}
             >
               <FileText size={18} />
               <span>Download Resume</span>
