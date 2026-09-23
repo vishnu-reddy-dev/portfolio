@@ -3,7 +3,7 @@ export const skillsData = [
     category: "Programming",
     description: "Core languages for building object-oriented backends and modern web applications.",
     skills: [
-      { name: "Core Java", icon: "Coffee" },
+      { name: "Java", icon: "Coffee" },
       { name: "JavaScript", icon: "FileCode" }
     ]
   },

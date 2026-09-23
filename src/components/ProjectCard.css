@@ -22,6 +22,11 @@
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
 }
 
+:root[data-theme="light"] .project-card:hover {
+  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.12);
+  border-color: #10b981;
+}
+
 .project-card:focus-visible {
   outline: 2px solid var(--accent-white);
   outline-offset: 4px;
@@ -33,7 +38,7 @@
   width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  background: #0f0f12;
+  background: var(--bg-surface);
 }
 
 .project-image {
@@ -44,16 +49,17 @@
   filter: grayscale(15%) brightness(0.9);
 }
 
+:root[data-theme="light"] .project-image {
+  filter: none;
+}
+
 .project-card:hover .project-image {
   transform: scale(1.06);
   filter: grayscale(0%) brightness(1.05);
 }
 
 .project-image-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, var(--bg-card) 0%, transparent 60%);
-  pointer-events: none;
+  display: none;
 }
 
 .project-number-badge {
@@ -64,7 +70,7 @@
   font-size: 0.85rem;
   font-weight: 700;
   color: var(--text-primary);
-  background: rgba(9, 9, 11, 0.85);
+  background: var(--bg-glass);
   backdrop-filter: blur(8px);
   border: 1px solid var(--border-strong);
   padding: 0.25rem 0.75rem;

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { Menu, X, ArrowUpRight, Sun, Moon } from 'lucide-react';
+import { useTheme } from '../context/ThemeContext';
 import './Navbar.css';
 
 const navLinks = [
@@ -13,6 +14,7 @@ const navLinks = [
 ];
 
 export default function Navbar() {
+  const { theme, toggleTheme } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
@@ -129,6 +131,20 @@ export default function Navbar() {
 
         {/* Action CTA */}
         <div className="navbar-actions">
+          {/* Theme Switcher Button */}
+          <button
+            className="theme-toggle-btn"
+            onClick={toggleTheme}
+            aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
+            title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
+          >
+            {theme === 'dark' ? (
+              <Sun size={18} className="theme-icon sun-icon" />
+            ) : (
+              <Moon size={18} className="theme-icon moon-icon" />
+            )}
+          </button>
+
           <a
             href="#contact"
             className="btn btn-secondary btn-sm desktop-only"
@@ -159,9 +175,23 @@ export default function Navbar() {
           <a href="#home" className="navbar-brand" onClick={() => handleNavClick('#home')}>
             <span className="brand-name">Vishnu Reddy</span>
           </a>
-          <button className="mobile-toggle" onClick={toggleMobileMenu} aria-label="Close Menu">
-            <X size={26} />
-          </button>
+          <div className="mobile-drawer-actions">
+            <button
+              className="theme-toggle-btn"
+              onClick={toggleTheme}
+              aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
+              title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
+            >
+              {theme === 'dark' ? (
+                <Sun size={18} className="theme-icon sun-icon" />
+              ) : (
+                <Moon size={18} className="theme-icon moon-icon" />
+              )}
+            </button>
+            <button className="mobile-toggle" onClick={toggleMobileMenu} aria-label="Close Menu">
+              <X size={26} />
+            </button>
+          </div>
         </div>
 
         <nav className="mobile-nav">

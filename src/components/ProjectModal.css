@@ -17,6 +17,10 @@
   animation: backdropFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
+:root[data-theme="light"] .project-modal-backdrop {
+  background-color: rgba(15, 23, 42, 0.55);
+}
+
 @keyframes backdropFadeIn {
   from {
     opacity: 0;

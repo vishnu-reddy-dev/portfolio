@@ -6,16 +6,8 @@
 .projects-header {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  margin-bottom: clamp(2rem, 4vw, 3.5rem);
-}
-
-@media (min-width: 900px) {
-  .projects-header {
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: space-between;
-  }
+  gap: 1rem;
+  margin-bottom: clamp(1.75rem, 3.5vw, 3rem);
 }
 
 .project-filters {
@@ -23,14 +15,15 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 0.5rem 0.6rem;
+  width: 100%;
 }
 
 .filter-btn {
   font-family: var(--font-heading);
-  font-size: clamp(0.775rem, 1vw + 0.3rem, 0.85rem);
+  font-size: clamp(0.775rem, 0.9vw, 0.85rem);
   font-weight: 600;
   letter-spacing: 0.05em;
-  padding: 0.45rem 1.15rem;
+  padding: 0.45rem 1rem;
   border-radius: var(--radius-full);
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
@@ -38,7 +31,9 @@
   transition: all var(--transition-fast);
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.35rem;
+  cursor: pointer;
+  white-space: nowrap;
 }
 
 .filter-btn:hover {
@@ -52,6 +47,25 @@
   color: var(--text-inverse);
   border-color: var(--accent-white);
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+:root[data-theme="light"] .filter-btn {
+  background: #ffffff;
+  border-color: rgba(16, 185, 129, 0.22);
+  color: #475569;
+}
+
+:root[data-theme="light"] .filter-btn:hover {
+  background: #e6f5ec;
+  color: #059669;
+  border-color: #10b981;
+}
+
+:root[data-theme="light"] .filter-btn.active {
+  background: #10b981;
+  color: #ffffff !important;
+  border-color: #10b981;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.25);
 }
 
 .filter-count {

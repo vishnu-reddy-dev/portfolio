@@ -46,11 +46,13 @@ export default function Footer() {
             </a>
 
             <a
-              href="mailto:vishnumatamala10@gmail.com"
+              href="https://www.naukri.com/mnjuser/profile"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-icon"
-              aria-label="Email Contact"
+              aria-label="Naukri Profile"
             >
-              <Mail size={20} />
+              <NaukriIcon size={20} />
             </a>
           </div>
 

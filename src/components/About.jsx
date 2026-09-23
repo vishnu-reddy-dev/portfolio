@@ -24,12 +24,12 @@ export default function About() {
           <div className="about-image-column reveal-on-scroll">
             <div className="image-frame">
               <img
-                src="/images/profile-vishnu.jpg"
+                src="/images/about-vishnu.jpg"
                 alt="M. Vishnu Vardhan Reddy - Java Full Stack Developer"
                 className="profile-img"
                 onError={(e) => {
                   e.target.onerror = null;
-                  e.target.src = '/images/profile-vishnu.png';
+                  e.target.src = '/images/about-vishnu.png';
                 }}
               />
               <div className="image-border-accent" />
@@ -43,7 +43,7 @@ export default function About() {
             </h3>
 
             <p className="about-paragraph">
-              I am M. Vishnu Vardhan Reddy, working as an Associate Software Engineer at Speshway Solutions Pvt. Ltd. I specialize in enterprise-grade web application development using Core Java, Spring Boot, Spring MVC, Spring Data JPA, and Hibernate, integrated with MySQL and PostgreSQL databases.
+              I am M. Vishnu Vardhan Reddy, working as an Associate Software Engineer at Speshway Solutions Pvt. Ltd. I specialize in enterprise-grade web application development using Java, Spring Boot, Spring MVC, Spring Data JPA, and Hibernate, integrated with MySQL and PostgreSQL databases.
             </p>
 
             <p className="about-paragraph">

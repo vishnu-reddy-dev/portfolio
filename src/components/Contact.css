@@ -40,7 +40,14 @@
 .contact-info-card:hover {
   transform: translateX(6px);
   border-color: var(--border-active);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  background: var(--bg-surface-hover);
+  box-shadow: 0 8px 24px var(--accent-glow);
+}
+
+.contact-info-card:hover .contact-icon-wrapper {
+  background: var(--bg-card);
+  border-color: var(--border-active);
+  color: var(--accent-emerald);
 }
 
 .contact-icon-wrapper {
@@ -54,6 +61,7 @@
   justify-content: center;
   color: var(--text-primary);
   flex-shrink: 0;
+  transition: all var(--transition-fast);
 }
 
 .contact-card-label {
@@ -132,10 +140,16 @@
   transition: all var(--transition-fast);
 }
 
+.form-input:hover {
+  border-color: var(--border-active);
+  background: var(--bg-surface-hover);
+}
+
 .form-input:focus {
   outline: none;
-  border-color: var(--accent-white);
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+  border-color: var(--accent-emerald);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+  background: var(--bg-card);
 }
 
 .form-input.invalid {

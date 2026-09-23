@@ -1,6 +1,6 @@
 import React from 'react';
 import { educationData } from '../data/education';
-import { GraduationCap, Calendar, MapPin, Award } from 'lucide-react';
+import { GraduationCap, Calendar, MapPin, Award, Building2 } from 'lucide-react';
 import './Education.css';
 
 export default function Education() {
@@ -13,47 +13,47 @@ export default function Education() {
             <GraduationCap size={16} />
             <span>05 / Education</span>
           </div>
-          <h2 className="section-title">Education.</h2>
+          <h2 className="section-title">Academic Background.</h2>
           <p className="section-description">
-            Academic qualifications and educational background from high school to undergraduate engineering degree.
+            Academic qualifications and educational background from secondary school to undergraduate engineering degree.
           </p>
         </div>
 
         {/* Education Cards Grid */}
-        <div className="education-grid">
+        <div className="education-cards-grid">
           {educationData.map((item) => (
-            <div key={item.id} className="education-card reveal-on-scroll">
-              <div className="edu-top">
-                <div className="edu-degree-group">
-                  <div className="edu-badge-icon">
-                    <GraduationCap size={24} />
-                  </div>
-                  <div>
-                    <h3 className="edu-degree">{item.degree}</h3>
-                    {item.affiliation && (
-                      <span className="edu-affiliation">Affiliated to {item.affiliation}</span>
-                    )}
-                  </div>
-                </div>
-
-                <div className="edu-meta">
-                  <span className="meta-item">
-                    <Calendar size={14} />
-                    {item.duration}
-                  </span>
-                  <span className="meta-item">
-                    <MapPin size={14} />
-                    {item.location}
-                  </span>
-                  <span className="badge grade-badge">
-                    <Award size={13} />
-                    {item.grade}
-                  </span>
-                </div>
+            <div key={item.id} className="edu-card reveal-on-scroll">
+              <div className="edu-card-header">
+                <span className="edu-category-pill">{item.category}</span>
+                <span className="edu-grade-pill">
+                  <Award size={13} />
+                  {item.grade}
+                </span>
               </div>
 
-              <div className="edu-institution-info">
-                <p className="institution-name">{item.institution}</p>
+              <div className="edu-card-body">
+                <div className="edu-icon-badge">
+                  <GraduationCap size={22} />
+                </div>
+                <h3 className="edu-degree-title">{item.degree}</h3>
+                <p className="edu-institution-title">
+                  <Building2 size={14} className="institution-icon" />
+                  {item.institution}
+                </p>
+                {item.affiliation && (
+                  <span className="edu-affiliation-tag">Affiliation: {item.affiliation}</span>
+                )}
+              </div>
+
+              <div className="edu-card-footer">
+                <span className="edu-footer-meta">
+                  <Calendar size={13} />
+                  {item.duration}
+                </span>
+                <span className="edu-footer-meta">
+                  <MapPin size={13} />
+                  {item.location}
+                </span>
               </div>
             </div>
           ))}

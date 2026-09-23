@@ -76,52 +76,42 @@ export default function Hero() {
               </a>
 
               <a
-                href="mailto:vishnumatamala10@gmail.com"
+                href="https://www.naukri.com/mnjuser/profile"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-icon"
-                aria-label="Email Contact"
+                aria-label="Naukri Profile"
               >
-                <Mail size={20} />
+                <NaukriIcon size={20} />
               </a>
             </div>
           </div>
         </div>
 
-        {/* Animated Visual Hero Graphic */}
+        {/* Developer Portrait Visual Card */}
         <div className="hero-visual reveal-on-scroll">
-          <div className="hero-visual-card">
-            <div className="card-header">
-              <div className="card-dots">
-                <span className="dot red" />
-                <span className="dot yellow" />
-                <span className="dot green" />
-              </div>
-              <span className="card-filename">VishnuReddy.java</span>
+          <div className="hero-portrait-card">
+            <div className="portrait-image-wrapper">
+              <img
+                src="/images/hero-vishnu.jpg"
+                alt="M. Vishnu Vardhan Reddy - Java Full Stack Developer"
+                className="hero-portrait-img"
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = '/images/profile-vishnu.jpg';
+                }}
+              />
+              <div className="portrait-gradient-overlay" />
             </div>
 
-            <div className="card-body">
-              <pre className="code-block">
-                <code>
-                  <span className="keyword">public class</span> <span className="class-name">Developer</span> &#123;<br />
-                  &nbsp;&nbsp;<span className="keyword">private final String</span> name = <span className="string">"M. Vishnu Vardhan Reddy"</span>;<br />
-                  &nbsp;&nbsp;<span className="keyword">private final String</span> title = <span className="string">"Associate Software Engineer"</span>;<br />
-                  &nbsp;&nbsp;<span className="keyword">private final String[]</span> coreStack = &#123;<br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;<span className="string">"Java"</span>, <span className="string">"Spring Boot"</span>, <span className="string">"React.js"</span>, <span className="string">"MySQL"</span><br />
-                  &nbsp;&nbsp;&#125;;<br /><br />
-                  &nbsp;&nbsp;<span className="keyword">public void</span> <span className="function">buildEnterpriseApps</span>() &#123;<br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;<span className="type">System</span>.out.println(<span className="string">"Engineering scalable backend services &amp; modern UIs."</span>);<br />
-                  &nbsp;&nbsp;&#125;<br />
-                  &#125;
-                </code>
-              </pre>
-            </div>
-
-            {/* Floating Tech Badges */}
+            {/* Floating Tech Accent Badges */}
             <div className="floating-badge badge-top">
-              <Terminal size={14} />
-              <span>Spring Boot</span>
+              <Terminal size={14} className="badge-icon" />
+              <span>Spring Boot &amp; Java</span>
             </div>
+
             <div className="floating-badge badge-bottom">
-              <Code size={14} />
+              <Code size={14} className="badge-icon" />
               <span>React.js &amp; Next.js</span>
             </div>
           </div>
