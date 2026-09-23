@@ -93,12 +93,12 @@ export default function Hero() {
           <div className="hero-portrait-card">
             <div className="portrait-image-wrapper">
               <img
-                src="/images/hero-vishnu.jpg"
+                src="/images/hero-vishnu.png"
                 alt="M. Vishnu Vardhan Reddy - Java Full Stack Developer"
                 className="hero-portrait-img"
                 onError={(e) => {
                   e.target.onerror = null;
-                  e.target.src = '/images/profile-vishnu.jpg';
+                  e.target.src = '/images/hero-vishnu.jpg';
                 }}
               />
               <div className="portrait-gradient-overlay" />
