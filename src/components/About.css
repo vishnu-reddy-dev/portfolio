@@ -170,14 +170,14 @@
   line-height: 1.6;
 }
 
-/* ── Tablet: stack image above text ── */
+/* ── Mobile / Tablet Responsive: Hide self photo completely ── */
 @media (max-width: 990px) {
   .about-grid {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 1.5rem;
   }
-  .profile-img {
-    height: clamp(320px, 45vh, 420px);
+  .about-image-column {
+    display: none !important;
   }
 }
 

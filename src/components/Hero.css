@@ -247,13 +247,13 @@
   animation-delay: -2s;
 }
 
-/* ── Tablet: hide code card visual, centre content ── */
-@media (max-width: 1024px) {
-  .hero-visual {
-    justify-content: center;
+/* ── Mobile / Tablet Responsive: Hide self photo completely ── */
+@media (max-width: 990px) {
+  .hero-container {
+    grid-template-columns: 1fr;
   }
-  .hero-visual-card {
-    max-width: 480px;
+  .hero-visual {
+    display: none !important;
   }
 }
 
