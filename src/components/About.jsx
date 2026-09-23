@@ -18,26 +18,9 @@ export default function About() {
           <h2 className="section-title">Professional Summary.</h2>
         </div>
 
-        {/* Two Column Layout */}
-        <div className="about-grid">
-          {/* Left Column: Image & Decorative Frame */}
-          <div className="about-image-column reveal-on-scroll">
-            <div className="image-frame">
-              <img
-                src="/images/about-vishnu.jpg"
-                alt="M. Vishnu Vardhan Reddy - Java Full Stack Developer"
-                className="profile-img"
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src = '/images/about-vishnu.png';
-                }}
-              />
-              <div className="image-border-accent" />
-            </div>
-          </div>
-
-          {/* Right Column: Bio & Core Focus */}
-          <div className="about-content-column reveal-on-scroll">
+        {/* Full-width Bio & Core Focus Content */}
+        <div className="about-content-wrapper reveal-on-scroll">
+          <div className="about-content-column">
             <h3 className="about-subtitle">
               Java Full Stack Developer with {duration.full} of Professional Experience.
             </h3>
