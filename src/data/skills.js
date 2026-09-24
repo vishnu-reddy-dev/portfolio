@@ -1,15 +1,25 @@
 export const skillsData = [
   {
-    category: "Programming",
-    description: "Core languages for building object-oriented backends and modern web applications.",
+    category: "Languages",
+    description: "Core languages for object-oriented backend services and client-side web application logic.",
     skills: [
-      { name: "Java", icon: "Coffee" },
-      { name: "JavaScript", icon: "FileCode" }
+      { name: "Core Java (OOPs, Collections, Exception Handling, Multithreading)", icon: "Coffee" },
+      { name: "JavaScript (ES6+)", icon: "FileCode" }
+    ]
+  },
+  {
+    category: "Frameworks",
+    description: "Enterprise Java frameworks for robust backend application architecture.",
+    skills: [
+      { name: "Spring Boot", icon: "Cpu" },
+      { name: "Spring MVC", icon: "Layers" },
+      { name: "Spring Data JPA", icon: "Database" },
+      { name: "Hibernate", icon: "Layers" }
     ]
   },
   {
     category: "Backend",
-    description: "Architecting RESTful services, database connections, and web application logic.",
+    description: "Architecting RESTful services, database connections, and backend application workflows.",
     skills: [
       { name: "REST APIs", icon: "Network" },
       { name: "JDBC", icon: "Database" },
@@ -20,29 +30,19 @@ export const skillsData = [
     ]
   },
   {
-    category: "Frameworks",
-    description: "Enterprise Java frameworks for scalable enterprise applications.",
-    skills: [
-      { name: "Spring Boot", icon: "Cpu" },
-      { name: "Spring MVC", icon: "Layers" },
-      { name: "Spring Data JPA", icon: "Database" },
-      { name: "Hibernate", icon: "Layers" }
-    ]
-  },
-  {
     category: "Frontend",
-    description: "Building responsive, modern user interfaces and client-side applications.",
+    description: "Building responsive, component-driven user interfaces and client applications.",
     skills: [
       { name: "React.js", icon: "Atom" },
-      { name: "Next.js", icon: "Layout" },
+      { name: "Next.js (SSR/SSG)", icon: "Layout" },
       { name: "HTML5", icon: "Code" },
       { name: "CSS3", icon: "Palette" },
-      { name: "JavaScript ES6+", icon: "FileCode" }
+      { name: "JavaScript (ES6+)", icon: "FileCode" }
     ]
   },
   {
     category: "Security",
-    description: "Authentication, authorization, and secure API endpoints.",
+    description: "Securing APIs, user authentication, and authorization mechanisms.",
     skills: [
       { name: "Spring Security", icon: "ShieldCheck" },
       { name: "JWT Authentication", icon: "Key" }
@@ -50,7 +50,7 @@ export const skillsData = [
   },
   {
     category: "Databases",
-    description: "Relational database design, query optimization, and data persistence.",
+    description: "Relational database schema design, query optimization, and persistent storage.",
     skills: [
       { name: "MySQL", icon: "Database" },
       { name: "PostgreSQL", icon: "Server" },
@@ -58,38 +58,27 @@ export const skillsData = [
     ]
   },
   {
-    category: "Tools / Build",
-    description: "Build tools, IDEs, API client applications, and version control.",
+    category: "Tools & Build",
+    description: "Build tools, IDEs, API clients, and source control management.",
     skills: [
-      { name: "Maven", icon: "Box" },
       { name: "Git", icon: "GitBranch" },
       { name: "GitHub", icon: "Github" },
-      { name: "Eclipse", icon: "Box" },
-      { name: "Spring Tool Suite", icon: "Cpu" },
+      { name: "Maven", icon: "Box" },
       { name: "Postman", icon: "Send" },
       { name: "Bruno", icon: "Send" },
+      { name: "Eclipse", icon: "Box" },
+      { name: "Spring Tool Suite (STS)", icon: "Cpu" },
       { name: "VS Code", icon: "Terminal" }
     ]
   },
   {
     category: "Deployment",
-    description: "Cloud hosting platforms for backend services and web applications.",
+    description: "Cloud hosting platforms and application server environments.",
     skills: [
       { name: "Railway", icon: "Cloud" },
       { name: "Render", icon: "Cloud" },
       { name: "Vercel", icon: "Cloud" },
-      { name: "Netlify", icon: "Cloud" }
-    ]
-  },
-  {
-    category: "Other",
-    description: "Development methodologies, web design principles, and server environments.",
-    skills: [
-      { name: "Agile", icon: "RefreshCw" },
-      { name: "Scrum", icon: "Users" },
-      { name: "CI/CD", icon: "GitBranch" },
-      { name: "Figma", icon: "Palette" },
-      { name: "Responsive Web Design", icon: "Layout" },
+      { name: "Netlify", icon: "Cloud" },
       { name: "Apache Tomcat", icon: "Server" }
     ]
   }

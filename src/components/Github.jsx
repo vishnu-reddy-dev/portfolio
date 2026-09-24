@@ -8,7 +8,7 @@ const fallbackProfile = {
   name: "M. Vishnu Vardhan Reddy",
   avatar_url: "https://github.com/vishnu-reddy000.png",
   html_url: "https://github.com/vishnu-reddy000",
-  bio: "Associate Software Engineer | Java Full Stack Developer | Spring Boot, React, Microservices"
+  bio: "Associate Software Engineer | Java Full Stack Developer | Spring Boot, React, REST APIs"
 };
 
 const featuredRepos = [

@@ -1,7 +1,7 @@
 .hero-section {
   min-height: calc(100dvh - var(--header-height));
-  padding-top: calc(var(--header-height) + clamp(1rem, 3.5vw, 3rem));
-  padding-bottom: clamp(2.5rem, 4.5vw, 5rem);
+  padding-top: calc(var(--header-height) + clamp(1rem, 2.5vw, 2.25rem));
+  padding-bottom: clamp(1.5rem, 2.5vw, 2.5rem);
   display: flex;
   align-items: center;
   position: relative;

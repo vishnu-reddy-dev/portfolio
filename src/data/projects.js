@@ -3,16 +3,17 @@ export const projectsData = [
     id: 1,
     number: "01",
     title: "Multi-Tenant SaaS CRM Platform",
-    description: "A scalable multi-tenant CRM platform engineered with role-based access control and tenant-specific configurations to support multiple client organizations on a single platform.",
-    technologies: ["Java", "Spring Boot", "REST APIs", "MySQL", "HTML", "CSS", "JavaScript"],
+    description: "Built a multi-tenant architecture with role-based access control and tenant-specific configurations, enabling a single platform to scale across multiple client organizations.",
+    technologies: ["Java", "Spring Boot", "REST APIs", "MySQL", "HTML/CSS/JS"],
     categories: ["FULL STACK", "JAVA"],
     image: "/images/saas-crm.png",
     features: [
-      "Multi-tenant architecture with role-based access control (RBAC)",
-      "Tenant-specific configurations for isolated client environments"
+      "Built a multi-tenant architecture with role-based access control and tenant-specific configurations, enabling a single platform to scale across multiple client organizations.",
+      "Developed RESTful APIs for frontend-backend communication and optimized MySQL queries for performance.",
+      "Delivered isolated data handling per tenant, supporting scalable, multi-client SaaS deployment."
     ],
-    contribution: "Built RESTful APIs for frontend-backend communication and optimized database queries for performance.",
-    businessImpact: "Enabled a single platform to scale across multiple client organizations with isolated data per tenant.",
+    contribution: "Developed RESTful APIs for frontend-backend communication and optimized MySQL queries for performance.",
+    businessImpact: "Delivered isolated data handling per tenant, supporting scalable, multi-client SaaS deployment across client organizations.",
     githubUrl: null,
     demoUrl: null,
     featured: true
@@ -20,19 +21,18 @@ export const projectsData = [
   {
     id: 2,
     number: "02",
-    title: "Library Management System",
-    description: "Digitized library operations system managing book cataloging, member registrations, issue-return workflows, and automated fine calculation.",
-    technologies: ["Java", "Spring Boot", "REST APIs", "MySQL", "HTML", "CSS", "JavaScript"],
+    title: "Smart Office Management System",
+    description: "Built modules for employee attendance tracking, leave management, task assignment, and department-wise reporting with a responsive full-stack UI deployed on Apache Tomcat.",
+    technologies: ["Java", "Spring Boot", "Servlets", "JDBC", "MySQL", "HTML5/CSS3"],
     categories: ["FULL STACK", "JAVA"],
-    image: "/images/library-system.png",
+    image: "/images/smart-office.png",
     features: [
-      "Book cataloging & catalog search",
-      "Member registration",
-      "Issue-return workflow",
-      "Automated fine calculation"
+      "Built modules for employee attendance tracking, leave management, task assignment, and department-wise reporting.",
+      "Designed a responsive full-stack UI, deployed on Apache Tomcat with persistent MySQL storage.",
+      "Centralized office administration, improving visibility into attendance and workload across departments."
     ],
-    contribution: "Implemented RESTful APIs for catalog search and record management with optimized MySQL queries.",
-    businessImpact: "Digitized manual library operations, reducing turnaround time for book issue and return.",
+    contribution: "Designed a responsive full-stack UI, deployed on Apache Tomcat with persistent MySQL storage.",
+    businessImpact: "Centralized office administration, improving visibility into attendance and workload across departments.",
     githubUrl: null,
     demoUrl: null,
     featured: true
@@ -40,19 +40,18 @@ export const projectsData = [
   {
     id: 3,
     number: "03",
-    title: "Smart Office Management System",
-    description: "Full-stack administrative management application enabling employee attendance tracking, leave request workflows, task assignment, and department-wise reporting.",
-    technologies: ["Java", "Spring Boot", "Servlets", "JDBC", "MySQL", "HTML5", "CSS3"],
+    title: "Library Management System",
+    description: "Book catalog, member registration, and issue/return workflow with automated fine calculation; implemented REST APIs for catalog search and record management with optimized MySQL queries.",
+    technologies: ["Java", "Spring Boot", "REST APIs", "MySQL", "HTML/CSS/JS"],
     categories: ["FULL STACK", "JAVA"],
-    image: "/images/smart-office.png",
+    image: "/images/library-system.png",
     features: [
-      "Employee attendance tracking",
-      "Leave management",
-      "Task assignment",
-      "Department-wise reporting"
+      "Book catalog, member registration, and issue/return workflow with automated fine calculation.",
+      "Implemented REST APIs for catalog search and record management with optimized MySQL queries.",
+      "Digitized manual library operations, reducing turnaround time for book issue and return."
     ],
-    contribution: "Built a full-stack application with a responsive UI, deployed on Apache Tomcat with persistent MySQL storage.",
-    businessImpact: "Centralized office administration tasks, improving visibility into attendance and workload across departments.",
+    contribution: "Implemented REST APIs for catalog search and record management with optimized MySQL queries.",
+    businessImpact: "Digitized manual library operations, reducing turnaround time for book issue and return.",
     githubUrl: null,
     demoUrl: null,
     featured: true
@@ -61,18 +60,17 @@ export const projectsData = [
     id: 4,
     number: "04",
     title: "Typing Master",
-    description: "Interactive real-time typing application with live WPM calculation, accuracy tracking, timed test modes, error highlighting, and leaderboard score history.",
-    technologies: ["Java", "Spring Boot", "MySQL", "HTML", "CSS", "JavaScript"],
+    description: "Real-time WPM and accuracy tracking with difficulty levels, error highlighting, score history, and leaderboard; built REST APIs and MySQL schema with dynamic, JavaScript DOM-driven UI feedback.",
+    technologies: ["Java", "Spring Boot", "MySQL", "HTML/CSS/JS"],
     categories: ["FULL STACK", "WEB"],
     image: "/images/typing-master.png",
     features: [
-      "Real-time typing speed test & live WPM tracking",
-      "Accuracy tracking & timed test modes",
-      "Multiple difficulty levels & real-time error highlighting",
-      "Score history & competitive leaderboard"
+      "Real-time WPM and accuracy tracking with difficulty levels & real-time error highlighting.",
+      "Score history and competitive leaderboard tracking.",
+      "Built REST APIs and MySQL schema with dynamic, JavaScript DOM-driven UI feedback."
     ],
-    contribution: "Designed RESTful APIs and MySQL schema to calculate and persist typing metrics; built an interactive, responsive UI with dynamic DOM manipulation.",
-    businessImpact: "Delivered a gamified, engaging typing practice tool that helps users track and improve typing speed and accuracy over time.",
+    contribution: "Built REST APIs and MySQL schema with dynamic, JavaScript DOM-driven UI feedback.",
+    businessImpact: "Delivered a gamified typing practice tool that helps users track and improve typing speed and accuracy over time.",
     githubUrl: null,
     demoUrl: null,
     featured: false
@@ -81,18 +79,17 @@ export const projectsData = [
     id: 5,
     number: "05",
     title: "Placement / Interview Preparation Platform",
-    description: "Web application featuring curated question banks by topic and company, mock practice tests with instant scoring, progress dashboard, bookmarking, and searchable resource library.",
+    description: "Topic/company-based question bank, mock tests with instant scoring, progress dashboard, bookmarking, and resource library; built with React Hooks, SSR, and REST API integration.",
     technologies: ["Next.js", "React.js", "JavaScript", "REST APIs"],
     categories: ["FULL STACK", "REACT", "WEB"],
     image: "/images/interview-prep.png",
     features: [
-      "Curated question bank by topic/company",
-      "Mock/practice tests with instant scoring",
-      "Progress dashboard & bookmarking",
-      "Searchable resource library for interview preparation"
+      "Topic/company-based question bank & resource library for interview preparation.",
+      "Mock/practice tests with instant scoring, progress dashboard, and bookmarking.",
+      "Built with React Hooks, Next.js SSR, and REST API integration for fast, SEO-friendly pages."
     ],
-    contribution: "Built a component-based frontend using React.js and Next.js SSR for fast page loads; implemented client-side routing and REST API integration with React Hooks.",
-    businessImpact: "Created a centralized, easy-to-navigate preparation platform to help job seekers and students prepare efficiently.",
+    contribution: "Built with React Hooks, SSR, and REST API integration for fast, SEO-friendly pages.",
+    businessImpact: "Created a centralized, easy-to-navigate preparation platform helping job seekers prepare efficiently.",
     githubUrl: null,
     demoUrl: null,
     featured: true

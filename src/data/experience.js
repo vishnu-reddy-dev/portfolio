@@ -7,21 +7,20 @@ export const experienceData = [
     id: 1,
     role: "Associate Software Engineer",
     company: "Speshway Solutions Pvt. Ltd.",
-    location: "India",
-    period: "April 3, 2025 - Present",
+    location: "Andhra Pradesh, India",
+    period: "April 2025 – Present",
     totalDuration: duration.full,
     shortDuration: duration.short,
     type: "Full-time",
     description: "Engineered and maintained enterprise-level Java Full Stack applications supporting core business operations.",
     responsibilities: [
-      "Engineered and maintained enterprise-level Java Full Stack applications using Spring Boot, JavaScript, HTML, CSS, REST APIs, and MySQL.",
-      "Built core modules for a Smart Office Management System, streamlining organizational workflows.",
-      "Developed a Multi-Tenant SaaS CRM platform featuring role-based access control and tenant-specific configurations for isolated client environments.",
-      "Designed and integrated RESTful APIs to facilitate efficient frontend-backend communication and third-party system integrations.",
-      "Participated actively in Agile sprint cycles, delivering production-ready features on schedule.",
-      "Optimized database queries and backend application logic to enhance system responsiveness and application performance.",
-      "Utilized Git, GitHub, Maven, and cloud deployment workflows for version control and deployment pipelines.",
-      "Diagnosed and resolved production issues through systematic debugging and performance tuning."
+      "Engineered and maintained enterprise-level Java Full Stack applications using Spring Boot, JavaScript, HTML, CSS, REST APIs, and MySQL to support core business operations.",
+      "Developed key modules for a Smart Office Management System, streamlining internal workflows and improving operational efficiency across departments.",
+      "Designed a Multi-Tenant SaaS-based CRM platform with role-based access control and tenant-specific configurations, enabling scalable multi-client deployment.",
+      "Integrated RESTful APIs to enable seamless frontend-backend communication and third-party system connectivity.",
+      "Optimized database queries to reduce page load and API response times while collaborating with cross-functional Agile teams to deliver production-ready features on schedule.",
+      "Managed source control and deployment workflows using Git, GitHub, and Maven alongside cloud-based deployment pipelines, ensuring clean releases and repeatable builds.",
+      "Diagnosed and resolved production issues through debugging and performance tuning, enhancing application stability and reliability."
     ],
     technologies: [
       "Java",
@@ -40,6 +39,7 @@ export const experienceData = [
       "HTML5",
       "CSS3",
       "Git",
+      "GitHub",
       "Maven"
     ]
   }

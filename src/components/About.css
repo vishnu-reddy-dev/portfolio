@@ -5,7 +5,7 @@
 
 .about-content-wrapper {
   max-width: 960px;
-  margin-bottom: clamp(2.5rem, 4vw, 4rem);
+  margin-bottom: clamp(1.5rem, 2.5vw, 2.25rem);
 }
 
 .about-content-column {

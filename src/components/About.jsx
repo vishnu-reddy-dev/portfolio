@@ -26,11 +26,11 @@ export default function About() {
             </h3>
 
             <p className="about-paragraph">
-              I am M. Vishnu Vardhan Reddy, working as an Associate Software Engineer at Speshway Solutions Pvt. Ltd. I specialize in enterprise-grade web application development using Java, Spring Boot, Spring MVC, Spring Data JPA, and Hibernate, integrated with MySQL and PostgreSQL databases.
+              Java Full Stack Developer with {duration.full} of experience designing, building, and maintaining enterprise-grade web applications using Java, Spring Boot, Spring MVC, Spring Data JPA, and Hibernate. Skilled in building secure, scalable REST APIs with Spring Security and JWT Authentication, backed by MySQL and PostgreSQL, with growing expertise in React.js and Next.js for modern frontend development.
             </p>
 
             <p className="about-paragraph">
-              My core expertise spans building secure REST APIs with Spring Security and JWT authentication, frontend development with React.js and Next.js, full-stack application design, performance optimization, and object-oriented design within Agile/Scrum environments.
+              Experienced in Agile/Scrum teams, using Git, GitHub, and Maven for version control and build automation. Strong foundation in clean architecture and object-oriented design, with a track record of improving application performance and delivering production-ready features on schedule.
             </p>
 
             {/* Core Pillars Grid */}
@@ -71,7 +71,7 @@ export default function About() {
             </div>
             <h4 className="feature-title">Backend &amp; REST APIs</h4>
             <p className="feature-desc">
-              Designing robust RESTful microservices, object-relational mapping (Hibernate/JPA), and scalable business logic in Spring Boot.
+              Designing robust RESTful APIs, object-relational mapping (Hibernate/JPA), and scalable business logic in Spring Boot.
             </p>
           </div>
 
