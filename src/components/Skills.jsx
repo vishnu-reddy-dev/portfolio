@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { skillsData } from '../data/skills';
 import {
   Code, Palette, FileCode, Atom, Layout,
@@ -19,6 +19,92 @@ const iconMap = {
   Cloud, RefreshCw, Users
 };
 
+// Interactive Mouse-Following Glow Skill Chip
+function GlowSkillChip({ name, icon: IconComp }) {
+  const chipRef = useRef(null);
+
+  const handlePointerMove = (e) => {
+    const chip = chipRef.current;
+    if (!chip) return;
+    const rect = chip.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const t = Math.max(0, Math.min(1, x / (rect.width || 1)));
+
+    // Interpolate Emerald #10b981 (16, 185, 129) to Indigo #6366f1 (99, 102, 241)
+    const r = Math.round(16 + (99 - 16) * t);
+    const g = Math.round(185 + (102 - 185) * t);
+    const b = Math.round(129 + (241 - 129) * t);
+
+    chip.style.setProperty('--pointer-x', `${x}px`);
+    chip.style.setProperty('--pointer-y', `${y}px`);
+    chip.style.setProperty('--button-glow', `rgba(${r}, ${g}, ${b}, 0.35)`);
+  };
+
+  return (
+    <div
+      ref={chipRef}
+      className="skill-chip glow-button"
+      onPointerMove={handlePointerMove}
+    >
+      <div className="gradient" aria-hidden="true" />
+      <IconComp size={16} className="skill-chip-icon" />
+      <span className="skill-chip-name">{name}</span>
+    </div>
+  );
+}
+
+// Interactive Mouse-Following Glow Skill Category Card
+function GlowCategoryCard({ categoryGroup }) {
+  const cardRef = useRef(null);
+
+  const handlePointerMove = (e) => {
+    const card = cardRef.current;
+    if (!card) return;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const t = Math.max(0, Math.min(1, x / (rect.width || 1)));
+
+    // Interpolate Emerald #10b981 (16, 185, 129) to Indigo #6366f1 (99, 102, 241)
+    const r = Math.round(16 + (99 - 16) * t);
+    const g = Math.round(185 + (102 - 185) * t);
+    const b = Math.round(129 + (241 - 129) * t);
+
+    card.style.setProperty('--pointer-x', `${x}px`);
+    card.style.setProperty('--pointer-y', `${y}px`);
+    card.style.setProperty('--button-glow', `rgba(${r}, ${g}, ${b}, 0.18)`);
+  };
+
+  return (
+    <div
+      ref={cardRef}
+      className="skill-category-card glow-button reveal-on-scroll"
+      onPointerMove={handlePointerMove}
+    >
+      <div className="gradient" aria-hidden="true" />
+      
+      <div className="category-header">
+        <h3 className="category-title">{categoryGroup.category}</h3>
+        <p className="category-desc">{categoryGroup.description}</p>
+      </div>
+
+      <div className="skills-chips-grid">
+        {categoryGroup.skills.map((skill, skillIdx) => {
+          const IconComp = iconMap[skill.icon] || CheckCircle2;
+          return (
+            <GlowSkillChip
+              key={skillIdx}
+              name={skill.name}
+              icon={IconComp}
+            />
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 export default function Skills() {
   return (
     <section id="skills" className="section skills-section">
@@ -38,24 +124,10 @@ export default function Skills() {
         {/* Skill Category Cards */}
         <div className="skills-categories-grid">
           {skillsData.map((categoryGroup, index) => (
-            <div key={index} className="skill-category-card reveal-on-scroll">
-              <div className="category-header">
-                <h3 className="category-title">{categoryGroup.category}</h3>
-                <p className="category-desc">{categoryGroup.description}</p>
-              </div>
-
-              <div className="skills-chips-grid">
-                {categoryGroup.skills.map((skill, skillIdx) => {
-                  const IconComp = iconMap[skill.icon] || CheckCircle2;
-                  return (
-                    <div key={skillIdx} className="skill-chip">
-                      <IconComp size={16} className="skill-chip-icon" />
-                      <span className="skill-chip-name">{skill.name}</span>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
+            <GlowCategoryCard
+              key={index}
+              categoryGroup={categoryGroup}
+            />
           ))}
         </div>
       </div>

@@ -80,13 +80,13 @@ export const projectsData = [
     number: "05",
     title: "Placement / Interview Preparation Platform",
     description: "Topic/company-based question bank, mock tests with instant scoring, progress dashboard, bookmarking, and resource library; built with React Hooks, SSR, and REST API integration.",
-    technologies: ["Next.js", "React.js", "JavaScript", "REST APIs"],
+    technologies: ["React.js", "JavaScript", "HTML5/CSS3", "REST APIs"],
     categories: ["FULL STACK", "REACT", "WEB"],
     image: "/images/interview-prep.png",
     features: [
       "Topic/company-based question bank & resource library for interview preparation.",
       "Mock/practice tests with instant scoring, progress dashboard, and bookmarking.",
-      "Built with React Hooks, Next.js SSR, and REST API integration for fast, SEO-friendly pages."
+      "Built with React Hooks and REST API integration for fast, responsive pages."
     ],
     contribution: "Built with React Hooks, SSR, and REST API integration for fast, SEO-friendly pages.",
     businessImpact: "Created a centralized, easy-to-navigate preparation platform helping job seekers prepare efficiently.",

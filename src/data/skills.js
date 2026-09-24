@@ -34,7 +34,6 @@ export const skillsData = [
     description: "Building responsive, component-driven user interfaces and client applications.",
     skills: [
       { name: "React.js", icon: "Atom" },
-      { name: "Next.js (SSR/SSG)", icon: "Layout" },
       { name: "HTML5", icon: "Code" },
       { name: "CSS3", icon: "Palette" },
       { name: "JavaScript (ES6+)", icon: "FileCode" }

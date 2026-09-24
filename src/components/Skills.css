@@ -1,3 +1,7 @@
+/* ==========================================================================
+   SKILLS SECTION STYLES WITH INTERACTIVE MOUSE-FOLLOWING GLOW
+   ========================================================================== */
+
 .skills-section {
   border-top: 1px solid var(--border-subtle);
   background: var(--bg-surface);
@@ -7,6 +11,43 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
   gap: 1.15rem;
+}
+
+/* Mouse-following Glow Container Rules */
+.skill-category-card.glow-button,
+.skill-chip.glow-button {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Radial Spotlight Gradient Layer */
+.gradient {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  background: radial-gradient(
+    180px circle at var(--pointer-x, 50%) var(--pointer-y, 50%),
+    var(--button-glow, rgba(16, 185, 129, 0.2)) 0%,
+    transparent 70%
+  );
+  z-index: 1;
+  border-radius: inherit;
+}
+
+.skill-chip .gradient {
+  background: radial-gradient(
+    90px circle at var(--pointer-x, 50%) var(--pointer-y, 50%),
+    var(--button-glow, rgba(16, 185, 129, 0.35)) 0%,
+    transparent 80%
+  );
+}
+
+.skill-category-card:hover > .gradient,
+.skill-chip:hover > .gradient {
+  opacity: 1;
 }
 
 .skill-category-card {
@@ -26,6 +67,8 @@
 }
 
 .category-header {
+  position: relative;
+  z-index: 2;
   margin-bottom: 0.85rem;
   padding-bottom: 0.75rem;
   border-bottom: 1px solid var(--border-subtle);
@@ -51,6 +94,8 @@
 }
 
 .skills-chips-grid {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-wrap: wrap;
   gap: 0.45rem;
@@ -85,6 +130,8 @@
 }
 
 .skill-chip-icon {
+  position: relative;
+  z-index: 2;
   color: var(--accent-light);
   flex-shrink: 0;
 }
@@ -94,6 +141,8 @@
 }
 
 .skill-chip-name {
+  position: relative;
+  z-index: 2;
   font-family: var(--font-mono);
   font-size: 0.78rem;
   font-weight: 500;
@@ -112,5 +161,3 @@
     padding: 0.3rem 0.55rem;
   }
 }
-
-

@@ -34,7 +34,6 @@ export const experienceData = [
       "MySQL",
       "PostgreSQL",
       "React.js",
-      "Next.js",
       "JavaScript",
       "HTML5",
       "CSS3",

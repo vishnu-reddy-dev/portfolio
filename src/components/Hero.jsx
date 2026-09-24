@@ -1,9 +1,20 @@
 import React from 'react';
 import { ArrowDown, FileText, Send, Mail, Code, Terminal, Sparkles } from 'lucide-react';
 import { GithubIcon, LinkedinIcon, NaukriIcon } from './BrandIcons';
+import TypewriterText from './TypewriterText';
+import BorderBeam from './BorderBeam';
+import RainbowButton from './RainbowButton';
+import DownloadResumeButton from './DownloadResumeButton';
 import './Hero.css';
 
 export default function Hero() {
+  const rolePhrases = [
+    "Associate Software Engineer | Java Full Stack Developer",
+    "Spring Boot & REST API Specialist",
+    "React.js Full Stack Engineer",
+    "Building Enterprise SaaS Applications"
+  ];
+
   return (
     <section id="home" className="hero-section bg-grid-pattern">
       {/* Background Ambient Glow */}
@@ -21,34 +32,34 @@ export default function Hero() {
           {/* Main Title */}
           <h1 className="hero-title reveal-on-scroll">
             <span className="hero-name">M. Vishnu Vardhan Reddy</span>
-            <span className="hero-role">Associate Software Engineer | Java Full Stack Developer</span>
+            <span className="hero-role">
+              <TypewriterText
+                texts={rolePhrases}
+                speed={60}
+                deleteSpeed={35}
+                pauseDuration={2400}
+              />
+            </span>
           </h1>
 
           {/* Intro Description */}
           <p className="hero-intro reveal-on-scroll">
-            Java Full Stack Developer with 1 Year 5 Months of experience building secure, scalable enterprise web applications using Java, Spring Boot, REST APIs, MySQL, PostgreSQL, React.js, and Next.js.
+            Java Full Stack Developer with 1 Year 5 Months of experience building secure, scalable enterprise web applications using Java, Spring Boot, REST APIs, MySQL, PostgreSQL, and React.js.
           </p>
 
           {/* Action CTAs */}
           <div className="hero-actions reveal-on-scroll">
-            <a href="#projects" className="btn btn-primary">
+            <RainbowButton href="#projects">
               <span>View Projects</span>
               <ArrowDown size={18} />
-            </a>
+            </RainbowButton>
 
-            <a href="#contact" className="btn btn-secondary">
+            <RainbowButton href="#contact">
               <Send size={18} />
               <span>Contact Me</span>
-            </a>
+            </RainbowButton>
 
-            <a
-              href="/resume.pdf"
-              download="M_Vishnu_Vardhan_Reddy_Resume.pdf"
-              className="btn btn-secondary"
-            >
-              <FileText size={18} />
-              <span>Download Resume</span>
-            </a>
+            <DownloadResumeButton />
           </div>
 
           {/* Social Links */}
@@ -102,6 +113,22 @@ export default function Hero() {
                 }}
               />
               <div className="portrait-gradient-overlay" />
+              
+              {/* Dual Offset Border Beam Animation */}
+              <BorderBeam
+                duration={6}
+                borderWidth={2.5}
+                colorFrom="#10b981"
+                colorTo="#6366f1"
+                delay={0}
+              />
+              <BorderBeam
+                duration={6}
+                borderWidth={2.5}
+                colorFrom="#ec4899"
+                colorTo="#3b82f6"
+                delay={3}
+              />
             </div>
 
             {/* Floating Tech Accent Badges */}
@@ -112,7 +139,7 @@ export default function Hero() {
 
             <div className="floating-badge badge-bottom">
               <Code size={14} className="badge-icon" />
-              <span>React.js &amp; Next.js</span>
+              <span>React.js &amp; Frontend</span>
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { UserCheck, FileText, Cpu, ShieldCheck, Zap } from 'lucide-react';
+import { UserCheck, Cpu, ShieldCheck, Zap } from 'lucide-react';
 import { getExperienceDuration } from '../utils/experience';
 import './About.css';
 
@@ -26,7 +26,7 @@ export default function About() {
             </h3>
 
             <p className="about-paragraph">
-              Java Full Stack Developer with {duration.full} of experience designing, building, and maintaining enterprise-grade web applications using Java, Spring Boot, Spring MVC, Spring Data JPA, and Hibernate. Skilled in building secure, scalable REST APIs with Spring Security and JWT Authentication, backed by MySQL and PostgreSQL, with growing expertise in React.js and Next.js for modern frontend development.
+              Java Full Stack Developer with {duration.full} of experience designing, building, and maintaining enterprise-grade web applications using Java, Spring Boot, Spring MVC, Spring Data JPA, and Hibernate. Skilled in building secure, scalable REST APIs with Spring Security and JWT Authentication, backed by MySQL and PostgreSQL, with growing expertise in React.js for modern frontend development.
             </p>
 
             <p className="about-paragraph">
@@ -47,18 +47,6 @@ export default function About() {
                 <span className="stat-number">Agile</span>
                 <span className="stat-label">Production Delivery</span>
               </div>
-            </div>
-
-            {/* Action CTA */}
-            <div className="about-actions">
-              <a
-                href="/resume.pdf"
-                download="M_Vishnu_Vardhan_Reddy_Resume.pdf"
-                className="btn btn-primary"
-              >
-                <FileText size={18} />
-                <span>Download Resume</span>
-              </a>
             </div>
           </div>
         </div>
@@ -91,7 +79,7 @@ export default function About() {
             </div>
             <h4 className="feature-title">Frontend &amp; Performance</h4>
             <p className="feature-desc">
-              Building responsive frontend interfaces with React.js and Next.js while optimizing MySQL database queries and API response times.
+              Building responsive frontend interfaces with React.js while optimizing MySQL database queries and API response times.
             </p>
           </div>
         </div>

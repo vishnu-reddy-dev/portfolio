@@ -1,0 +1,19 @@
+/* ==========================================================================
+   TYPEWRITER TEXT COMPONENT STYLES
+   ========================================================================== */
+
+.typewriter-container {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.typewriter-text {
+  display: inline;
+}
+
+.typewriter-cursor {
+  display: none !important;
+}

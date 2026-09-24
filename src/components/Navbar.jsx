@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Menu, X, ArrowUpRight, Sun, Moon } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
+import RainbowButton from './RainbowButton';
 import './Navbar.css';
 
 const navLinks = [
@@ -170,9 +171,9 @@ export default function Navbar() {
             )}
           </button>
 
-          <a
+          <RainbowButton
             href="#contact"
-            className="btn btn-secondary btn-sm desktop-only"
+            className="rainbow-button-sm desktop-only"
             onClick={(e) => {
               e.preventDefault();
               handleNavClick('#contact');
@@ -180,7 +181,7 @@ export default function Navbar() {
           >
             <span>Contact Me</span>
             <ArrowUpRight size={16} />
-          </a>
+          </RainbowButton>
 
           {/* Hamburger Menu Button */}
           <button
