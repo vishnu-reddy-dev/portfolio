@@ -1,23 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 import './ProjectCard.css';
 
-export default function ProjectCard({ project, onClick }) {
-  const { number, title, image, categories = [] } = project;
+export default function ProjectCard({ project }) {
+  const { id, number, title, image, categories = [] } = project;
 
   return (
-    <article
+    <Link
+      to={`/project/${id}`}
       className="project-card reveal-on-scroll"
-      onClick={() => onClick(project)}
-      role="button"
-      tabIndex={0}
-      onKeyDown={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          onClick(project);
-        }
-      }}
-      aria-label={`View details for ${title}`}
+      aria-label={`View full project page for ${title}`}
     >
       {/* Project Image Container */}
       <div className="project-image-wrapper">
@@ -48,11 +41,12 @@ export default function ProjectCard({ project, onClick }) {
 
         <div className="project-card-footer">
           <span className="view-details-text">
-            <span>View Details</span>
+            <span>View Full Details</span>
             <ArrowUpRight size={16} className="arrow-icon" />
           </span>
         </div>
       </div>
-    </article>
+    </Link>
   );
 }
+

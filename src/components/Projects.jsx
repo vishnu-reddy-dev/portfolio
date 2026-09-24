@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import { projectsData, projectCategories } from '../data/projects';
 import ProjectCard from './ProjectCard';
-import ProjectModal from './ProjectModal';
 import { FolderGit2 } from 'lucide-react';
 import './Projects.css';
 
 export default function Projects() {
   const [activeCategory, setActiveCategory] = useState('ALL');
-  const [selectedProject, setSelectedProject] = useState(null);
 
   const filteredProjects = activeCategory === 'ALL'
     ? projectsData
@@ -25,7 +23,7 @@ export default function Projects() {
             </div>
             <h2 className="section-title">Selected Projects.</h2>
             <p className="section-description">
-              A collection of scalable full-stack applications, enterprise Java services, and modern React interfaces built with clean architecture. Click any card to explore full features and implementation details.
+              A collection of scalable full-stack applications, enterprise Java services, and modern React interfaces built with clean architecture. Click any card to view its dedicated project page.
             </p>
           </div>
 
@@ -52,7 +50,6 @@ export default function Projects() {
             <ProjectCard
               key={project.id}
               project={project}
-              onClick={(proj) => setSelectedProject(proj)}
             />
           ))}
         </div>
@@ -63,12 +60,7 @@ export default function Projects() {
           </div>
         )}
       </div>
-
-      {/* Project Details Modal Popup */}
-      <ProjectModal
-        project={selectedProject}
-        onClose={() => setSelectedProject(null)}
-      />
     </section>
   );
 }
+

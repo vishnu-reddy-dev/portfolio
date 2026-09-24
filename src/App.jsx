@@ -1,37 +1,32 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Skills from './components/Skills';
-import Experience from './components/Experience';
-import Projects from './components/Projects';
-import Education from './components/Education';
-import Github from './components/Github';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import { useScrollReveal } from './hooks/useScrollReveal';
+import Home from './pages/Home';
+import ProjectDetails from './pages/ProjectDetails';
+
+function ScrollToTop() {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    if (!hash) {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, hash]);
+
+  return null;
+}
 
 export default function App() {
-  // Initialize IntersectionObserver scroll reveal animations
-  useScrollReveal();
-
   return (
     <ThemeProvider>
-      <div className="portfolio-app">
-        <Navbar />
-        <main id="main-content">
-          <Hero />
-          <About />
-          <Skills />
-          <Experience />
-          <Projects />
-          <Education />
-          <Github />
-          <Contact />
-        </main>
-        <Footer />
-      </div>
+      <BrowserRouter>
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/project/:id" element={<ProjectDetails />} />
+          <Route path="*" element={<Home />} />
+        </Routes>
+      </BrowserRouter>
     </ThemeProvider>
   );
 }

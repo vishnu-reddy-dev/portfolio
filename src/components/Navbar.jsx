@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Menu, X, ArrowUpRight, Sun, Moon } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 import './Navbar.css';
@@ -18,6 +19,8 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,6 +33,11 @@ export default function Navbar() {
 
   // Intersection Observer to highlight current active section with top offset margin
   useEffect(() => {
+    if (location.pathname !== '/') {
+      setActiveSection('');
+      return;
+    }
+
     const sections = navLinks.map(link => document.querySelector(link.href)).filter(Boolean);
     
     const observer = new IntersectionObserver(
@@ -45,7 +53,7 @@ export default function Navbar() {
 
     sections.forEach((section) => observer.observe(section));
     return () => sections.forEach((section) => observer.unobserve(section));
-  }, []);
+  }, [location.pathname]);
 
   // Lock background scrolling when mobile menu is open
   useEffect(() => {
@@ -87,6 +95,23 @@ export default function Navbar() {
 
   const handleNavClick = (href) => {
     setMobileMenuOpen(false);
+
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const element = document.querySelector(href);
+        if (element) {
+          const navbarOffset = 85;
+          const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+          window.scrollTo({
+            top: elementPosition - navbarOffset,
+            behavior: 'smooth'
+          });
+        }
+      }, 100);
+      return;
+    }
+
     const element = document.querySelector(href);
     if (element) {
       const navbarOffset = 85;
