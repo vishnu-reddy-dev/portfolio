@@ -27,28 +27,32 @@
   font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--text-primary);
-  background-color: var(--bg-card);
-  border: 1.5px solid transparent;
+  background-color: transparent;
+  border: none;
   cursor: pointer;
-  transition: transform var(--transition-fast), background-color var(--transition-fast), color var(--transition-fast);
+  transition: transform var(--transition-fast), color var(--transition-fast);
   white-space: nowrap;
-  isolation: isolate;
   text-decoration: none;
   max-width: 100%;
+  z-index: 0;
+}
+
+/* Ensure text/icons sit above the pseudo-element layers */
+.rainbow-button > * {
+  position: relative;
+  z-index: 1;
 }
 
 :root[data-theme="light"] .rainbow-button {
-  background-color: #ffffff;
   color: #0f172a;
 }
 
-/* Crisp Animated Rainbow Border ONLY */
+/* Animated Rainbow Border */
 .rainbow-button::before {
   content: '';
   position: absolute;
-  inset: -1.5px;
+  inset: -2px;
   border-radius: var(--radius-full);
-  padding: 1.5px;
   background: linear-gradient(
     90deg,
     #ff4500,
@@ -60,21 +64,35 @@
   );
   background-size: 200% 200%;
   animation: rainbowAnimation 4s linear infinite;
-  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-  mask-composite: exclude;
-  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: destination-out;
-  z-index: 1;
+  z-index: -1;
   pointer-events: none;
+}
+
+/* Solid inner fill so text stays visible over the gradient border */
+.rainbow-button::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border-radius: calc(var(--radius-full) - 2px);
+  background-color: var(--bg-card);
+  z-index: -1;
+  pointer-events: none;
+}
+
+:root[data-theme="light"] .rainbow-button::after {
+  background-color: #ffffff;
 }
 
 .rainbow-button:hover {
   transform: translateY(-2px);
-  background-color: var(--bg-surface-hover);
   color: var(--text-primary);
 }
 
-:root[data-theme="light"] .rainbow-button:hover {
+.rainbow-button:hover::after {
+  background-color: var(--bg-surface-hover);
+}
+
+:root[data-theme="light"] .rainbow-button:hover::after {
   background-color: #f8fafc;
 }
 
