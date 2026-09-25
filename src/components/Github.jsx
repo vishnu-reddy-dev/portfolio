@@ -4,10 +4,10 @@ import { GithubIcon } from './BrandIcons';
 import './Github.css';
 
 const fallbackProfile = {
-  login: "vishnu-reddy000",
+  login: "vishnu-reddy-dev",
   name: "M. Vishnu Vardhan Reddy",
-  avatar_url: "https://github.com/vishnu-reddy000.png",
-  html_url: "https://github.com/vishnu-reddy000",
+  avatar_url: "https://github.com/vishnu-reddy-dev.png",
+  html_url: "https://github.com/vishnu-reddy-dev",
   bio: "Java Full Stack Developer | Spring Boot | React | REST APIs"
 };
 
@@ -16,25 +16,25 @@ const featuredRepos = [
     name: "multi-tenant-saas-crm",
     description: "Multi-tenant SaaS CRM with RBAC and tenant-specific configurations built using Java & Spring Boot.",
     language: "Java",
-    url: "https://github.com/vishnu-reddy000"
+    url: "https://github.com/vishnu-reddy-dev"
   },
   {
     name: "smart-office-management",
     description: "Smart office platform for attendance, leave management, task assignment, and reporting.",
     language: "Java",
-    url: "https://github.com/vishnu-reddy000"
+    url: "https://github.com/vishnu-reddy-dev"
   },
   {
     name: "library-management-system",
     description: "Library management system with cataloging, member management, issue-return workflows, REST APIs, and MySQL.",
     language: "Java",
-    url: "https://github.com/vishnu-reddy000"
+    url: "https://github.com/vishnu-reddy-dev"
   },
   {
     name: "typing-master",
     description: "Real-time typing test with WPM, accuracy tracking, leaderboards, and difficulty levels.",
     language: "JavaScript",
-    url: "https://github.com/vishnu-reddy000"
+    url: "https://github.com/vishnu-reddy-dev"
   }
 ];
 
@@ -45,7 +45,7 @@ export default function Github() {
   useEffect(() => {
     let isMounted = true;
     
-    fetch('https://api.github.com/users/vishnu-reddy000')
+    fetch('https://api.github.com/users/vishnu-reddy-dev')
       .then((res) => {
         if (!res.ok) throw new Error('API limit or user not found');
         return res.json();

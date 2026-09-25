@@ -145,7 +145,7 @@ export default function Contact() {
             </a>
 
             <a
-              href="https://github.com/vishnu-reddy000"
+              href="https://github.com/vishnu-reddy-dev"
               target="_blank"
               rel="noopener noreferrer"
               className="contact-info-card"
@@ -155,7 +155,7 @@ export default function Contact() {
               </div>
               <div>
                 <span className="contact-card-label">GitHub</span>
-                <span className="contact-card-value">github.com/vishnu-reddy000</span>
+                <span className="contact-card-value">github.com/vishnu-reddy-dev</span>
               </div>
             </a>
           </div>

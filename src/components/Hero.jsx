@@ -76,7 +76,7 @@ export default function Hero() {
             <span className="socials-label">Connect:</span>
             <div className="socials-group">
               <a
-                href="https://github.com/vishnu-reddy000"
+                href="https://github.com/vishnu-reddy-dev"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-icon"
