@@ -1,0 +1,51 @@
+/* ==========================================================================
+   TEXT ANIMATE — slideUp by word
+   Each word slides up from below and fades in, staggered.
+   Animation runs once on mount and then stays fully visible.
+   ========================================================================== */
+
+.text-animate {
+  /* inline-flex so it sits inside its parent span naturally,
+     wraps like real text, and starts flush-left */
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0 0.28em;          /* horizontal gap = word space; no vertical gap */
+  align-items: flex-end;  /* baselines align even when words differ in height */
+}
+
+.text-animate-word {
+  display: inline-block;
+  /* Clip so the word slides up from below without overflow bleeding */
+  overflow: hidden;
+  /* Enough vertical padding inside the clip to give the slide room;
+     negative margin pulls the layout back so line-height stays correct */
+  padding-bottom: 0.15em;
+  margin-bottom: -0.15em;
+  line-height: inherit;
+}
+
+/* The inner span is what actually moves */
+.text-animate-word-inner {
+  display: inline-block;
+  animation: wordSlideUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes wordSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(110%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .text-animate-word-inner {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

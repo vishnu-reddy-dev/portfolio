@@ -20,7 +20,7 @@ export default function Footer() {
             <a href="#home" onClick={(e) => { e.preventDefault(); scrollToTop(); }} className="footer-brand">
               <span className="brand-name">Vishnu Reddy</span>
             </a>
-            <p className="footer-tagline">Associate Software Engineer | Java Full Stack Developer</p>
+            <p className="footer-tagline">Java Full Stack Developer</p>
           </div>
 
           {/* Social Links */}
@@ -73,7 +73,7 @@ export default function Footer() {
             &copy; 2026 M. Vishnu Vardhan Reddy. All rights reserved.
           </p>
           <p className="footer-subtext">
-            Associate Software Engineer | Java Full Stack Developer
+            Java Full Stack Developer · Spring Boot · React
           </p>
         </div>
       </div>

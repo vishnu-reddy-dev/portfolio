@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { ArrowDown, FileText, Send, Mail, Code, Terminal, Sparkles } from 'lucide-react';
 import { GithubIcon, LinkedinIcon, NaukriIcon } from './BrandIcons';
-import TypewriterText from './TypewriterText';
 import BorderBeam from './BorderBeam';
 import RainbowButton from './RainbowButton';
 import DownloadResumeButton from './DownloadResumeButton';
+import TextAnimate from './TextAnimate';
 import './Hero.css';
 
 export default function Hero() {
@@ -14,6 +14,12 @@ export default function Hero() {
     "React.js Full Stack Engineer",
     "Building Enterprise SaaS Applications"
   ];
+
+  // Pick one role randomly on page load — stays fixed for the entire session
+  const selectedRole = useMemo(
+    () => rolePhrases[Math.floor(Math.random() * rolePhrases.length)],
+    [] // eslint-disable-line react-hooks/exhaustive-deps
+  );
 
   return (
     <section id="home" className="hero-section bg-grid-pattern">
@@ -31,14 +37,17 @@ export default function Hero() {
 
           {/* Main Title */}
           <h1 className="hero-title reveal-on-scroll">
-            <span className="hero-name">M. Vishnu Vardhan Reddy</span>
-            <span className="hero-role">
-              <TypewriterText
-                texts={rolePhrases}
-                speed={60}
-                deleteSpeed={35}
-                pauseDuration={2400}
-              />
+            {/* Headline: each word slides up on its own line, staggered */}
+            <span className="hero-headline">
+              <TextAnimate delay={0} stagger={0.12}>
+                BUILDING SCALABLE SOLUTIONS.
+              </TextAnimate>
+            </span>
+            {/* Role: starts after headline words finish */}
+            <span className="hero-role" key={selectedRole}>
+              <TextAnimate delay={0.5} stagger={0.07}>
+                {selectedRole}
+              </TextAnimate>
             </span>
           </h1>
 

@@ -14,13 +14,12 @@ export const experienceData = [
     type: "Full-time",
     description: "Engineered and maintained enterprise-level Java Full Stack applications supporting core business operations.",
     responsibilities: [
-      "Engineered and maintained enterprise-level Java Full Stack applications using Spring Boot, JavaScript, HTML, CSS, REST APIs, and MySQL to support core business operations.",
-      "Developed key modules for a Smart Office Management System, streamlining internal workflows and improving operational efficiency across departments.",
-      "Designed a Multi-Tenant SaaS-based CRM platform with role-based access control and tenant-specific configurations, enabling scalable multi-client deployment.",
-      "Integrated RESTful APIs to enable seamless frontend-backend communication and third-party system connectivity.",
-      "Optimized database queries to reduce page load and API response times while collaborating with cross-functional Agile teams to deliver production-ready features on schedule.",
-      "Managed source control and deployment workflows using Git, GitHub, and Maven alongside cloud-based deployment pipelines, ensuring clean releases and repeatable builds.",
-      "Diagnosed and resolved production issues through debugging and performance tuning, enhancing application stability and reliability."
+      "Developed Java Full Stack applications using Java, Spring Boot, JavaScript, REST APIs, and MySQL.",
+      "Built Smart Office Management modules and a Multi-Tenant SaaS CRM with RBAC and tenant-specific configurations.",
+      "Integrated REST APIs for frontend-backend and third-party connectivity.",
+      "Optimized SQL queries and API performance to improve application responsiveness.",
+      "Collaborated in Agile teams to deliver production-ready features and resolve issues.",
+      "Managed Git, GitHub, Maven, and cloud deployments, ensuring reliable releases."
     ],
     technologies: [
       "Java",

@@ -20,7 +20,7 @@
   padding-left: 2.25rem;
   display: flex;
   flex-direction: column;
-  gap: 2.75rem;
+  gap: 1.5rem;
 }
 
 /* Vertical line — centered at left: 6px from timeline edge */
@@ -105,7 +105,7 @@
 @media (max-width: 600px) {
   .education-timeline {
     padding-left: 1.5rem;
-    gap: 2rem;
+    gap: 1.25rem;
   }
   .education-timeline::before {
     left: 6px;

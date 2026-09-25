@@ -8,31 +8,31 @@ const fallbackProfile = {
   name: "M. Vishnu Vardhan Reddy",
   avatar_url: "https://github.com/vishnu-reddy000.png",
   html_url: "https://github.com/vishnu-reddy000",
-  bio: "Associate Software Engineer | Java Full Stack Developer | Spring Boot, React, REST APIs"
+  bio: "Java Full Stack Developer | Spring Boot | React | REST APIs"
 };
 
 const featuredRepos = [
   {
     name: "multi-tenant-saas-crm",
-    description: "Multi-tenant SaaS CRM platform with role-based access control and tenant-specific configurations built with Java & Spring Boot.",
+    description: "Multi-tenant SaaS CRM with RBAC and tenant-specific configurations built using Java & Spring Boot.",
     language: "Java",
     url: "https://github.com/vishnu-reddy000"
   },
   {
     name: "smart-office-management",
-    description: "Employee attendance tracking, leave management, task assignment, and department-wise reporting system built with Spring Boot.",
+    description: "Smart office platform for attendance, leave management, task assignment, and reporting.",
     language: "Java",
     url: "https://github.com/vishnu-reddy000"
   },
   {
     name: "library-management-system",
-    description: "Book cataloging, member registration, issue-return workflow, and automated fine calculation with RESTful APIs and MySQL.",
+    description: "Library management system with cataloging, member management, issue-return workflows, REST APIs, and MySQL.",
     language: "Java",
     url: "https://github.com/vishnu-reddy000"
   },
   {
     name: "typing-master",
-    description: "Real-time typing speed test with live WPM, accuracy tracking, leaderboard, and multiple difficulty levels.",
+    description: "Real-time typing test with WPM, accuracy tracking, leaderboards, and difficulty levels.",
     language: "JavaScript",
     url: "https://github.com/vishnu-reddy000"
   }
