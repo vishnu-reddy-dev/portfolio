@@ -1,5 +1,5 @@
 /* ==========================================================================
-   PARTICLE RESUME BUTTON STYLES
+   PARTICLE RESUME BUTTON — Light Mode Only
    ========================================================================== */
 
 .particle-resume-btn {
@@ -14,20 +14,15 @@
   font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--text-primary);
-  background-color: var(--bg-card);
-  border: 1px solid var(--border-strong);
+  background-color: #ffffff;
+  border: 1.5px solid var(--border-strong);
   overflow: hidden !important;
   cursor: pointer;
   transition: all var(--transition-normal);
   text-decoration: none;
   isolation: isolate;
   white-space: nowrap;
-}
-
-:root[data-theme="light"] .particle-resume-btn {
-  background-color: #ffffff;
-  color: #0f172a;
-  border-color: rgba(16, 185, 129, 0.3);
+  box-shadow: 0 2px 8px rgba(31, 27, 24, 0.06);
 }
 
 .particle-canvas {
@@ -52,9 +47,6 @@
 
 .particle-resume-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 25px rgba(16, 185, 129, 0.35) !important;
-}
-
-:root[data-theme="light"] .particle-resume-btn:hover {
-  box-shadow: 0 0 25px rgba(16, 185, 129, 0.25) !important;
+  border-color: var(--accent-primary);
+  box-shadow: 0 6px 20px rgba(77, 21, 38, 0.12) !important;
 }

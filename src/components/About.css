@@ -1,3 +1,7 @@
+/* ==========================================================================
+   ABOUT SECTION — Light Mode Only
+   ========================================================================== */
+
 .about-section {
   border-top: 1px solid var(--border-subtle);
   background: var(--bg-primary);
@@ -14,7 +18,6 @@
   width: 100%;
 }
 
-/* Content Column */
 .about-subtitle {
   font-size: clamp(1.2rem, 2vw + 0.5rem, 1.5rem);
   font-weight: 600;
@@ -31,7 +34,7 @@
   margin-bottom: 1.25rem;
 }
 
-/* Stats Grid */
+/* ── Stats Grid ── */
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -42,7 +45,7 @@
 }
 
 .stat-card {
-  background: var(--bg-surface);
+  background: #ffffff;
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
   padding: 1.25rem 0.75rem;
@@ -57,16 +60,17 @@
 }
 
 .stat-card:hover {
-  border-color: var(--border-strong);
+  border-color: var(--accent-primary);
   transform: translateY(-2px);
-  background: var(--bg-surface-hover);
+  background: #fff5f7;
+  box-shadow: 0 4px 16px rgba(77, 21, 38, 0.08);
 }
 
 .stat-number {
   font-family: var(--font-mono);
   font-size: clamp(1.15rem, 1.6vw, 1.5rem);
   font-weight: 700;
-  color: var(--accent-white);
+  color: var(--accent-primary);
   line-height: 1.2;
   margin-bottom: 0.4rem;
   white-space: nowrap;
@@ -85,7 +89,7 @@
   align-items: center;
 }
 
-/* Feature Cards Grid */
+/* ── Feature Cards ── */
 .feature-cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
@@ -93,7 +97,7 @@
 }
 
 .feature-card {
-  background: var(--bg-card);
+  background: #ffffff;
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
   padding: clamp(1.25rem, 3vw, 2rem);
@@ -102,20 +106,20 @@
 
 .feature-card:hover {
   transform: translateY(-5px);
-  border-color: var(--border-active);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  border-color: var(--accent-primary);
+  box-shadow: 0 12px 32px rgba(77, 21, 38, 0.1);
 }
 
 .feature-icon {
   width: 50px;
   height: 50px;
   border-radius: var(--radius-md);
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
+  background: #fff5f7;
+  border: 1px solid rgba(77, 21, 38, 0.12);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-primary);
+  color: var(--accent-primary);
   margin-bottom: 1.25rem;
   flex-shrink: 0;
 }
@@ -133,7 +137,7 @@
   line-height: 1.6;
 }
 
-/* ── Mobile / Tablet Responsive: Hide self photo completely ── */
+/* ── Responsive ── */
 @media (max-width: 990px) {
   .about-grid {
     grid-template-columns: 1fr;
@@ -144,7 +148,6 @@
   }
 }
 
-/* ── Small tablet: stats 3 → 2 columns ── */
 @media (max-width: 640px) {
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -159,11 +162,8 @@
   }
 }
 
-/* ── Mobile: stats 2 → 1 column ── */
 @media (max-width: 400px) {
   .stats-grid {
     grid-template-columns: 1fr;
   }
 }
-
-

@@ -1,10 +1,14 @@
+/* ==========================================================================
+   GITHUB SECTION — Light Mode Only
+   ========================================================================== */
+
 .github-section {
   border-top: 1px solid var(--border-subtle);
   background: var(--bg-surface);
 }
 
 .github-overview-card {
-  background: var(--bg-card);
+  background: #ffffff;
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
   padding: clamp(1.25rem, 3vw, 2rem);
@@ -76,7 +80,7 @@
 }
 
 .repo-card {
-  background: var(--bg-card);
+  background: #ffffff;
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
   padding: clamp(1.25rem, 2.5vw, 1.75rem);
@@ -88,8 +92,8 @@
 
 .repo-card:hover {
   transform: translateY(-6px);
-  border-color: var(--border-active);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  border-color: var(--accent-primary);
+  box-shadow: 0 12px 32px rgba(77, 21, 38, 0.1);
 }
 
 .repo-top {
@@ -113,7 +117,7 @@
 }
 
 .repo-card:hover .repo-link-icon {
-  color: var(--accent-white);
+  color: var(--accent-primary);
 }
 
 .repo-desc {
@@ -145,8 +149,8 @@
   height: 10px;
   border-radius: 50%;
 }
-.lang-dot.java { background: #b07219; }
-.lang-dot.javascript { background: #f1e05a; }
+.lang-dot.java       { background: #b07219; }
+.lang-dot.javascript { background: #d4aa00; }
 
 .repo-metrics {
   display: flex;
@@ -163,7 +167,6 @@
   color: var(--text-muted);
 }
 
-/* ── Mobile: stack profile badge row into a column ── */
 @media (max-width: 560px) {
   .profile-badge-row {
     flex-direction: column;
@@ -174,7 +177,6 @@
   }
 }
 
-/* ── Very small: repo footer wraps ── */
 @media (max-width: 400px) {
   .repo-footer {
     flex-direction: column;
@@ -182,5 +184,3 @@
     gap: 0.5rem;
   }
 }
-
-

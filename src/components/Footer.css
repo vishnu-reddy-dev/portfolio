@@ -1,3 +1,7 @@
+/* ==========================================================================
+   FOOTER — Light Mode Only
+   ========================================================================== */
+
 .footer {
   background: var(--bg-surface);
   border-top: 1px solid var(--border-subtle);
@@ -41,13 +45,14 @@
 }
 
 .scroll-top-btn {
-  background: var(--bg-card);
+  background: #ffffff;
   border-color: var(--border-strong);
 }
 
 .scroll-top-btn:hover {
-  background: var(--accent-white);
-  color: var(--text-inverse);
+  background: var(--accent-primary);
+  color: #ffffff;
+  border-color: var(--accent-primary);
 }
 
 .footer-bottom {
@@ -66,7 +71,6 @@
   color: var(--text-muted);
 }
 
-/* ── Mobile: stack footer top into a column ── */
 @media (max-width: 480px) {
   .footer-top {
     flex-direction: column;
@@ -79,5 +83,3 @@
     gap: 0.5rem;
   }
 }
-
-

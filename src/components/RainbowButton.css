@@ -1,17 +1,11 @@
 /* ==========================================================================
-   RAINBOW BUTTON COMPONENT STYLES (CRISP BORDER-ONLY ANIMAITON)
+   RAINBOW BUTTON — Light Mode Only
    ========================================================================== */
 
 @keyframes rainbowAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .rainbow-button {
@@ -37,17 +31,13 @@
   z-index: 0;
 }
 
-/* Ensure text/icons sit above the pseudo-element layers */
+/* Text/icons always on top */
 .rainbow-button > * {
   position: relative;
   z-index: 1;
 }
 
-:root[data-theme="light"] .rainbow-button {
-  color: #0f172a;
-}
-
-/* Animated Rainbow Border */
+/* Animated rainbow border layer */
 .rainbow-button::before {
   content: '';
   position: absolute;
@@ -68,19 +58,16 @@
   pointer-events: none;
 }
 
-/* Solid inner fill so text stays visible over the gradient border */
+/* Solid white fill behind content */
 .rainbow-button::after {
   content: '';
   position: absolute;
   inset: 1px;
   border-radius: calc(var(--radius-full) - 1px);
-  background-color: var(--bg-card);
+  background-color: #ffffff;
   z-index: -1;
   pointer-events: none;
-}
-
-:root[data-theme="light"] .rainbow-button::after {
-  background-color: #ffffff;
+  transition: background-color var(--transition-fast);
 }
 
 .rainbow-button:hover {
@@ -89,11 +76,7 @@
 }
 
 .rainbow-button:hover::after {
-  background-color: var(--bg-surface-hover);
-}
-
-:root[data-theme="light"] .rainbow-button:hover::after {
-  background-color: #f8fafc;
+  background-color: var(--bg-surface);
 }
 
 .rainbow-button-sm {

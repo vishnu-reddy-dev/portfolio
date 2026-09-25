@@ -1,13 +1,12 @@
 /* ==========================================================================
-   PROJECT MODAL POPUP STYLES
-   Modern Obsidian Dark Theme with Smooth Animations & Backdrop Blur
+   PROJECT MODAL — Light Mode Only
    ========================================================================== */
 
 .project-modal-backdrop {
   position: fixed;
   inset: 0;
   z-index: 2000;
-  background-color: rgba(5, 6, 10, 0.85);
+  background-color: rgba(31, 27, 24, 0.55);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   display: flex;
@@ -17,27 +16,19 @@
   animation: backdropFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-:root[data-theme="light"] .project-modal-backdrop {
-  background-color: rgba(15, 23, 42, 0.55);
-}
-
 @keyframes backdropFadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 .project-modal-card {
   position: relative;
   width: min(100%, 760px);
   max-height: min(88vh, 88dvh);
-  background: var(--bg-card);
+  background: #ffffff;
   border: 1px solid var(--border-strong);
   border-radius: var(--radius-lg);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85);
+  box-shadow: 0 24px 60px rgba(31, 27, 24, 0.2);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -45,17 +36,11 @@
 }
 
 @keyframes modalSlideUp {
-  from {
-    opacity: 0;
-    transform: translateY(24px) scale(0.97);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+  from { opacity: 0; transform: translateY(24px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-/* Close Button */
+/* ── Close Button ── */
 .modal-close-btn {
   position: absolute;
   top: 0.85rem;
@@ -64,7 +49,7 @@
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  background: rgba(9, 9, 11, 0.75);
+  background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(8px);
   border: 1px solid var(--border-strong);
   color: var(--text-primary);
@@ -76,18 +61,19 @@
 }
 
 .modal-close-btn:hover {
-  background: var(--accent-white);
-  color: var(--text-inverse);
+  background: var(--accent-primary);
+  color: #ffffff;
+  border-color: var(--accent-primary);
   transform: rotate(90deg) scale(1.05);
 }
 
-/* Modal Hero Image */
+/* ── Modal Image ── */
 .modal-image-wrapper {
   position: relative;
   width: 100%;
   height: clamp(160px, 30vh, 280px);
   overflow: hidden;
-  background: #090b10;
+  background: var(--bg-surface);
   flex-shrink: 0;
 }
 
@@ -101,7 +87,7 @@
 .modal-image-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, var(--bg-card) 0%, rgba(19, 21, 32, 0.4) 60%, transparent 100%);
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.6) 0%, transparent 60%);
   pointer-events: none;
 }
 
@@ -113,14 +99,14 @@
   font-size: 0.8rem;
   font-weight: 700;
   color: var(--text-primary);
-  background: rgba(9, 9, 11, 0.85);
+  background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(8px);
   border: 1px solid var(--border-strong);
   padding: 0.3rem 0.75rem;
   border-radius: var(--radius-full);
 }
 
-/* Modal Body */
+/* ── Modal Body ── */
 .modal-body {
   padding: clamp(1.25rem, 3vw, 2.25rem);
   overflow-y: auto;
@@ -129,11 +115,9 @@
   gap: clamp(1.15rem, 2.5vw, 1.75rem);
 }
 
-.modal-body::-webkit-scrollbar {
-  width: 6px;
-}
+.modal-body::-webkit-scrollbar { width: 6px; }
 .modal-body::-webkit-scrollbar-thumb {
-  background: #27272a;
+  background: var(--border-strong);
   border-radius: var(--radius-full);
 }
 
@@ -155,11 +139,11 @@
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--accent-indigo);
-  background: rgba(99, 102, 241, 0.1);
+  color: var(--accent-primary);
+  background: rgba(77, 21, 38, 0.08);
   padding: 0.25rem 0.65rem;
   border-radius: var(--radius-sm);
-  border: 1px solid rgba(99, 102, 241, 0.2);
+  border: 1px solid rgba(77, 21, 38, 0.15);
 }
 
 .modal-title {
@@ -195,11 +179,11 @@
 }
 
 .section-icon {
-  color: var(--accent-indigo);
+  color: var(--accent-primary);
   flex-shrink: 0;
 }
 
-/* Features List */
+/* ── Features List ── */
 .modal-features-list {
   list-style: none;
   display: flex;
@@ -217,22 +201,22 @@
 }
 
 .modal-feature-item .feature-icon {
-  color: var(--accent-emerald);
+  color: var(--accent-primary);
   flex-shrink: 0;
   margin-top: 3px;
 }
 
-/* Highlight Box (Contribution / Impact) */
+/* ── Highlight Box ── */
 .modal-highlight-box {
-  background: rgba(255, 255, 255, 0.025);
-  border-left: 3px solid var(--accent-indigo);
+  background: rgba(77, 21, 38, 0.04);
+  border-left: 3px solid var(--accent-primary);
   border-radius: 0 var(--radius-md) var(--radius-md) 0;
   padding: 1.15rem 1.35rem;
 }
 
 .modal-highlight-box.impact {
-  border-left-color: var(--accent-emerald);
-  background: rgba(16, 185, 129, 0.03);
+  border-left-color: #22c55e;
+  background: rgba(34, 197, 94, 0.04);
 }
 
 .modal-highlight-text {
@@ -246,14 +230,14 @@
   font-weight: 500;
 }
 
-/* Tech Stack Badges */
+/* ── Tech Badges ── */
 .modal-tech-stack {
   display: flex;
   flex-wrap: wrap;
   gap: 0.6rem;
 }
 
-/* Actions Footer */
+/* ── Actions Footer ── */
 .modal-actions {
   display: flex;
   flex-wrap: wrap;
@@ -263,5 +247,3 @@
   border-top: 1px solid var(--border-subtle);
   margin-top: 0.5rem;
 }
-
-

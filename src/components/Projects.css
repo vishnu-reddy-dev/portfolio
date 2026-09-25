@@ -1,3 +1,7 @@
+/* ==========================================================================
+   PROJECTS SECTION — Light Mode Only
+   ========================================================================== */
+
 .projects-section {
   border-top: 1px solid var(--border-subtle);
   background: var(--bg-primary);
@@ -25,7 +29,7 @@
   letter-spacing: 0.05em;
   padding: 0.45rem 1rem;
   border-radius: var(--radius-full);
-  background: var(--bg-surface);
+  background: #ffffff;
   border: 1px solid var(--border-subtle);
   color: var(--text-muted);
   transition: all var(--transition-fast);
@@ -37,35 +41,16 @@
 }
 
 .filter-btn:hover {
-  color: var(--text-primary);
-  border-color: var(--border-strong);
-  background: var(--bg-surface-hover);
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
+  background: #fff5f7;
 }
 
 .filter-btn.active {
-  background: var(--accent-white);
-  color: var(--text-inverse);
-  border-color: var(--accent-white);
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-}
-
-:root[data-theme="light"] .filter-btn {
-  background: #ffffff;
-  border-color: rgba(16, 185, 129, 0.22);
-  color: #475569;
-}
-
-:root[data-theme="light"] .filter-btn:hover {
-  background: #e6f5ec;
-  color: #059669;
-  border-color: #10b981;
-}
-
-:root[data-theme="light"] .filter-btn.active {
-  background: #10b981;
-  color: #ffffff !important;
-  border-color: #10b981;
-  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.25);
+  background: var(--accent-primary);
+  color: #ffffff;
+  border-color: var(--accent-primary);
+  box-shadow: 0 4px 14px rgba(77, 21, 38, 0.2);
 }
 
 .filter-count {
@@ -79,14 +64,19 @@
   gap: clamp(1.5rem, 3vw, 2.25rem);
 }
 
-/* ── Force single column on mobile ── */
+.projects-empty {
+  text-align: center;
+  padding: 4rem 1rem;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
 @media (max-width: 640px) {
   .projects-grid {
     grid-template-columns: 1fr;
   }
 }
 
-/* ── Filter bar: limit height and allow scroll on very small screens ── */
 @media (max-width: 480px) {
   .project-filters {
     gap: 0.4rem;
@@ -96,13 +86,3 @@
     font-size: 0.775rem;
   }
 }
-
-.projects-empty {
-  text-align: center;
-  padding: 4rem 1rem;
-  color: var(--text-muted);
-  font-size: 1.1rem;
-}
-
-
-

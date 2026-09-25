@@ -1,3 +1,7 @@
+/* ==========================================================================
+   EXPERIENCE SECTION — Light Mode Only
+   ========================================================================== */
+
 .experience-section {
   border-top: 1px solid var(--border-subtle);
   background: var(--bg-primary);
@@ -49,16 +53,16 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: var(--accent-white);
+  background-color: var(--accent-primary);
 }
 
 .timeline-item:hover .timeline-marker {
-  border-color: var(--accent-white);
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 12px rgba(77, 21, 38, 0.25);
 }
 
 .timeline-card {
-  background: var(--bg-card);
+  background: #ffffff;
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
   padding: clamp(1.25rem, 3vw, 2rem);
@@ -67,8 +71,8 @@
 
 .timeline-card:hover {
   transform: translateX(6px);
-  border-color: var(--border-active);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  border-color: var(--accent-primary);
+  box-shadow: 0 10px 32px rgba(77, 21, 38, 0.1);
 }
 
 .card-top {
@@ -148,7 +152,7 @@
 }
 
 .list-icon {
-  color: var(--text-muted);
+  color: var(--accent-primary);
   flex-shrink: 0;
   margin-top: 3px;
 }
@@ -171,7 +175,6 @@
   border-top: 1px solid var(--border-subtle);
 }
 
-/* ── Disable slide hover on touch devices ── */
 @media (hover: none) {
   .timeline-card:hover {
     transform: none;
@@ -179,7 +182,6 @@
   }
 }
 
-/* ── Mobile: tighten left rail spacing ── */
 @media (max-width: 480px) {
   .timeline-container {
     padding: 1.5rem 0;
@@ -192,5 +194,3 @@
     gap: 0.4rem 0.75rem;
   }
 }
-
-

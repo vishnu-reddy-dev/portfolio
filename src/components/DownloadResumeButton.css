@@ -1,5 +1,5 @@
 /* ==========================================================================
-   GSAP INTERACTIVE TRUCK DOWNLOAD BUTTON STYLES
+   DOWNLOAD RESUME BUTTON — Light Mode Only
    ========================================================================== */
 
 .dl-button {
@@ -16,11 +16,6 @@
   --box-r: 0deg;
   --light-opacity: 1;
 
-  --button-bg: var(--bg-card, #131520);
-  --button-bg-hover: var(--bg-surface-hover, #171925);
-  --button-color: var(--text-primary, #f8fafc);
-  --button-border: var(--border-strong, rgba(255, 255, 255, 0.16));
-
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -29,8 +24,8 @@
   min-width: 210px;
   min-height: 48px;
   border-radius: var(--radius-full);
-  background: var(--button-bg);
-  color: var(--button-color);
+  background: #ffffff;
+  color: var(--text-primary);
   font-family: var(--font-heading);
   font-size: 0.925rem;
   font-weight: 600;
@@ -38,30 +33,21 @@
   cursor: pointer;
   overflow: hidden;
   outline: none;
-  border: 1px solid var(--button-border);
+  border: 1.5px solid var(--border-strong);
   transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease, transform 0.15s ease, box-shadow 0.3s ease;
   transform: scale(var(--scale)) translateZ(0);
   user-select: none;
   isolation: isolate;
   white-space: nowrap;
   max-width: 100%;
-}
-
-:root[data-theme="light"] .dl-button {
-  --button-bg: #ffffff;
-  --button-bg-hover: #10b981;
-  --button-color: #0f172a;
-  --button-border: rgba(16, 185, 129, 0.35);
-}
-
-:root[data-theme="light"] .dl-button:hover {
-  --button-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(31, 27, 24, 0.06);
 }
 
 .dl-button:hover {
-  background: var(--button-bg-hover);
-  border-color: var(--border-active, rgba(255, 255, 255, 0.3));
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(77, 21, 38, 0.2);
 }
 
 .dl-button .default {
@@ -99,14 +85,14 @@
 .dl-button .folder .paper {
   width: 14px;
   height: 10px;
-  background: #dcfce7;
+  background: #fde8ec;
   position: absolute;
   left: 3px;
   bottom: 1px;
   border-radius: 1px;
 }
 
-/* Truck SVG / Shapes */
+/* Truck */
 .dl-button .truck {
   position: absolute;
   width: 60px;
@@ -135,7 +121,7 @@
 .dl-button .truck .back {
   width: 32px;
   height: 18px;
-  background: #ffffff;
+  background: var(--accent-primary);
   border-radius: 2px;
   position: absolute;
   left: 0;
@@ -145,7 +131,7 @@
 .dl-button .truck .front {
   width: 18px;
   height: 14px;
-  background: #ffffff;
+  background: var(--accent-hover);
   border-radius: 2px 6px 2px 2px;
   position: absolute;
   right: 6px;
@@ -157,7 +143,7 @@
   position: absolute;
   width: 7px;
   height: 7px;
-  background: #6366f1;
+  background: #fde8ec;
   top: 2px;
   right: 2px;
   border-radius: 1px 3px 1px 1px;
@@ -179,14 +165,14 @@
   position: absolute;
   width: 8px;
   height: 8px;
-  background: #09090b;
+  background: var(--text-primary);
   border-radius: 50%;
   bottom: 0;
   left: 6px;
-  box-shadow: 28px 0 0 #09090b;
+  box-shadow: 28px 0 0 var(--text-primary);
 }
 
-/* Success Message State */
+/* Success State */
 .dl-button .success {
   position: absolute;
   inset: 0;

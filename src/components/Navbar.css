@@ -1,3 +1,7 @@
+/* ==========================================================================
+   NAVBAR — Light Mode Only
+   ========================================================================== */
+
 .navbar {
   position: fixed;
   top: 0;
@@ -12,11 +16,11 @@
 }
 
 .navbar-scrolled {
-  background: var(--bg-glass);
+  background: rgba(250, 247, 242, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-subtle);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 20px rgba(31, 27, 24, 0.08);
   height: 70px;
 }
 
@@ -28,7 +32,7 @@
   height: 100%;
 }
 
-/* Brand */
+/* ── Brand ── */
 .navbar-brand {
   font-family: var(--font-mono);
   font-size: 1.15rem;
@@ -41,17 +45,11 @@
   line-height: 1;
 }
 
-.brand-bracket {
-  color: var(--text-muted);
-  font-weight: 400;
-  transition: color var(--transition-fast);
+.navbar-brand:hover {
+  color: var(--accent-primary);
 }
 
-.navbar-brand:hover .brand-bracket {
-  color: var(--accent-white);
-}
-
-/* Desktop Nav */
+/* ── Desktop Nav ── */
 .desktop-nav {
   display: flex;
   align-items: center;
@@ -84,7 +82,7 @@
 
 .nav-link:hover,
 .nav-link.active {
-  color: var(--text-primary);
+  color: var(--accent-primary);
 }
 
 .active-dot {
@@ -95,66 +93,36 @@
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background-color: var(--accent-white);
-  box-shadow: 0 0 8px var(--accent-white);
+  background-color: var(--accent-primary);
+  box-shadow: 0 0 6px rgba(77, 21, 38, 0.5);
 }
 
+/* ── Navbar Actions ── */
 .navbar-actions {
   display: flex;
   align-items: center;
   gap: 0.75rem;
 }
 
-.theme-toggle-btn {
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius-full);
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
-  color: var(--text-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all var(--transition-fast);
-  flex-shrink: 0;
-}
-
-.theme-toggle-btn:hover {
-  background: var(--bg-surface-hover);
-  border-color: var(--border-active);
-  transform: rotate(15deg) scale(1.05);
-  color: var(--accent-emerald);
-}
-
-.theme-icon {
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.sun-icon {
-  color: #f59e0b;
-}
-
-.moon-icon {
-  color: #10b981;
-}
-
-.btn-sm {
-  padding: 0.5rem 1.2rem;
-  font-size: 0.85rem;
-}
-
+/* ── Mobile Toggle ── */
 .mobile-toggle {
   display: none;
   color: var(--text-primary);
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
+  background: #ffffff;
+  border: 1.5px solid var(--border-subtle);
   width: 42px;
   height: 42px;
   border-radius: var(--radius-md);
   align-items: center;
   justify-content: center;
   transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.mobile-toggle:hover {
+  background: var(--bg-surface);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
 }
 
 .mobile-drawer-actions {
@@ -163,12 +131,7 @@
   gap: 0.75rem;
 }
 
-.mobile-toggle:hover {
-  background: var(--bg-surface-hover);
-  border-color: var(--border-strong);
-}
-
-/* Mobile Drawer Overlay */
+/* ── Mobile Drawer ── */
 .mobile-drawer {
   position: fixed;
   top: 0;
@@ -231,7 +194,7 @@
 
 .mobile-nav-link:hover,
 .mobile-nav-link.active {
-  color: var(--accent-white);
+  color: var(--accent-primary);
   transform: translateX(8px);
 }
 
@@ -262,4 +225,3 @@
     display: flex;
   }
 }
-

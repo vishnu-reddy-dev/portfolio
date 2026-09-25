@@ -1,6 +1,5 @@
 /* ==========================================================================
-   PROJECT CARD GRID STYLES
-   Minimal, High-Impact 3D Tilt Cards
+   PROJECT CARD — Light Mode Only
    ========================================================================== */
 
 .project-card-custom-body {
@@ -20,23 +19,18 @@
   font-family: var(--font-mono, monospace);
   font-size: 0.725rem;
   font-weight: 500;
-  color: var(--text-secondary, #94a3b8);
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.08));
+  color: var(--text-secondary);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
   padding: 0.2rem 0.6rem;
   border-radius: var(--radius-full, 9999px);
-  transition: border-color 0.2s ease, color 0.2s ease;
-}
-
-:root[data-theme="light"] .tech-pill {
-  background: rgba(16, 185, 129, 0.06);
-  border-color: rgba(16, 185, 129, 0.2);
-  color: #0f172a;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
 }
 
 .tilt-card-wrapper:hover .tech-pill {
-  border-color: var(--border-strong, rgba(255, 255, 255, 0.25));
-  color: var(--text-primary, #ffffff);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+  background: #fff5f7;
 }
 
 .project-card-footer-cta {
@@ -46,9 +40,9 @@
   font-family: var(--font-mono, monospace);
   font-size: 0.825rem;
   font-weight: 600;
-  color: var(--text-secondary, #94a3b8);
+  color: var(--text-secondary);
   padding-top: 0.85rem;
-  border-top: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.08));
+  border-top: 1px solid var(--border-subtle);
   transition: color var(--transition-fast, 0.2s ease);
 }
 
@@ -57,7 +51,7 @@
 }
 
 .tilt-card-wrapper:hover .project-card-footer-cta {
-  color: var(--text-primary, #ffffff);
+  color: var(--accent-primary);
 }
 
 .tilt-card-wrapper:hover .arrow-icon {

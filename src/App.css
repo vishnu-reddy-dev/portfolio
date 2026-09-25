@@ -1,4 +1,7 @@
-/* Global Application Layout Wrapper */
+/* ==========================================================================
+   GLOBAL APPLICATION LAYOUT — Light Mode Only
+   ========================================================================== */
+
 .portfolio-app {
   min-height: 100vh;
   display: flex;
